@@ -1,11 +1,6 @@
 **🚀 Business Intelligence | 📊 Data Science & Analytics | 🤖 AI Enthusiast**
 
-### 🌷 About Me  
-
-My goal is to transform raw data into strategic insights, empowering decision-making and driving business growth.  
-
-🎷 **Copenhagen, Denmark**  
-🎓 **Master’s in Data Science & Big Data** | **Master’s in Data Analytics**  
+🌷 My goal is to transform raw data into strategic insights, empowering decision-making and driving business growth.  
 💡 Open to opportunities in **strategic consulting, banking, and fintech**  
 
 ---
