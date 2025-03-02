@@ -1,10 +1,10 @@
-# 👋 Hi, I'm Marta Blanco Arévalo!  
-**🚀 Business Intelligence Specialist | 📊 Data Science & Analytics | 🤖 AI Enthusiast**  
+# 🌷 I'm Marta Blanco Arévalo 
+**🚀 Business Intelligence | 📊 Data Science & Analytics | 🤖 AI Enthusiast**  
 
 ---
 
 ### 📌 About Me  
-I am passionate about **business intelligence and data science**, with experience in **predictive analytics, data visualization, and process optimization**. My goal is to transform raw data into strategic insights, empowering decision-making and driving business growth.  
+My goal is to transform raw data into strategic insights, empowering decision-making and driving business growth.  
 
 📍 **Copenhagen, Denmark**  
 🎓 **Master’s in Data Science & Big Data** | **Master’s in Data Analytics**  
@@ -36,20 +36,10 @@ I am passionate about **business intelligence and data science**, with experienc
 
 ---
 
-### 🏆 Certifications  
-
-✅ **Azure - The Power** *(2025)*  
-✅ **Power IA V.3 - HackIO Tech** *(2024)*  
-✅ **Power BI - IBM DataHack** *(2024)*  
-✅ **Gender Equality in Business - Ministry for Equality** *(2025)*  
-
----
-
 ### 🌎 Connect With Me  
 
 📩 **Email**: martablarev@gmail.com  
 🔗 **LinkedIn**: [linkedin.com/in/marta-blanco-arev](https://www.linkedin.com/in/marta-blanco-arev)  
-💻 **GitHub**: [github.com/marta-ba](https://github.com/marta-ba)  
 
 Always open to new opportunities and collaborations! 🚀  
 
