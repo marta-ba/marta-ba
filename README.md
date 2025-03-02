@@ -1,6 +1,4 @@
-# 🚀 Business Intelligence | 📊 Data Science & Analytics | 🤖 AI Enthusiast
-
----
+**🚀 Business Intelligence | 📊 Data Science & Analytics | 🤖 AI Enthusiast**
 
 ### 🌷 About Me  
 
