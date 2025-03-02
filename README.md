@@ -1,8 +1,9 @@
-# 🚀 Business Intelligence | 📊 Data Science & Analytics | 🤖 AI Enthusiast**  
+# 🚀 Business Intelligence | 📊 Data Science & Analytics | 🤖 AI Enthusiast
 
 ---
 
 ### 🌷 About Me  
+
 My goal is to transform raw data into strategic insights, empowering decision-making and driving business growth.  
 
 🎷 **Copenhagen, Denmark**  
