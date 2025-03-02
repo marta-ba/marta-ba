@@ -1,12 +1,11 @@
-# 🌷 I'm Marta Blanco Arévalo 
-**🚀 Business Intelligence | 📊 Data Science & Analytics | 🤖 AI Enthusiast**  
+# 🚀 Business Intelligence | 📊 Data Science & Analytics | 🤖 AI Enthusiast**  
 
 ---
 
-### 📌 About Me  
+### 🌷 About Me  
 My goal is to transform raw data into strategic insights, empowering decision-making and driving business growth.  
 
-📍 **Copenhagen, Denmark**  
+🎷 **Copenhagen, Denmark**  
 🎓 **Master’s in Data Science & Big Data** | **Master’s in Data Analytics**  
 💡 Open to opportunities in **strategic consulting, banking, and fintech**  
 
