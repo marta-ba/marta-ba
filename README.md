@@ -5,17 +5,6 @@
 
 ---
 
-### 🛠️ Technologies & Skills  
-
-🔹 **Programming Languages**: Python, R, SQL  
-🔹 **Databases**: PostgreSQL, MySQL, DBeaver  
-🔹 **BI & Data Analytics**: Power BI, ETL, DAX, Data Modeling  
-🔹 **Machine Learning**: K-Means, Random Forest, Neural Networks  
-🔹 **Development Tools**: Git, GitHub, Jupyter Notebooks, RStudio, VS Code  
-🔹 **Web Scraping**: Selenium, BeautifulSoup  
-
----
-
 ### 📊 Featured Projects  
 
 - 🏡 **[Real Estate Price Prediction](#)** | *Data Science*  
