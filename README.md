@@ -1,6 +1,7 @@
 ##  📊 Data Science & Analytics | 🤖 AI Enthusiast
 
 🌷 I optimize decision-making processes to unlock business growth 
+
 💡 Open to opportunities that are challenging and promising!
 
 ---
