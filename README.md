@@ -2,7 +2,7 @@
 
 🌷 I optimize decision-making processes to unlock business growth 
 
-💡 Open to opportunities that are challenging and promising!
+💡 Open to opportunities and collaborations that are challenging and promising!
 
 ---
 
@@ -24,5 +24,5 @@
 📩 **Email**: martablarev@gmail.com  
 🔗 **LinkedIn**: [linkedin.com/in/marta-blanco-arev](https://www.linkedin.com/in/marta-blanco-arev)  
 
-Always open to new opportunities and collaborations! 🚀  
+
 
