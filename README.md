@@ -1,6 +1,6 @@
-## 🚀 Business Intelligence | 📊 Data Science & Analytics | 🤖 AI Enthusiast
+##  📊 Data Science & Analytics | 🤖 AI Enthusiast
 
-🌷 My goal is to transform raw data into strategic insights, empowering decision-making and driving business growth.  
+🌷 I optimize decision-making processes to unlock business growth 
 💡 Open to opportunities that are challenging and promising!
 
 ---
