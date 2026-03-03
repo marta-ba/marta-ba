@@ -1,4 +1,4 @@
-##  📊 Data Science & Analytics | 🤖 AI Enthusiast
+##  📊 Data Science & Analytics 
 
 🌷 I optimize decision-making processes to unlock business growth 
 
