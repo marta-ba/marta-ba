@@ -1,28 +1,16 @@
-##  📊 Data Science & Analytics 
+<div align="center">
 
-🌷 I optimize decision-making processes to unlock business growth 
+# Hi, I'm [Your Name] 👋
 
-💡 Open to opportunities and collaborations that are challenging and promising!
+### Data Analyst | Business Analytics | Machine Learning
 
----
+I turn data into insights, models, and decisions.
 
-### 📊 Featured Projects  
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/yourprofile)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Visit-black?style=for-the-badge&logo=vercel)](https://yourportfolio.com)
+[![Email](https://img.shields.io/badge/Email-Contact-red?style=for-the-badge&logo=gmail&logoColor=white)](mailto:youremail@email.com)
 
-- 🏡 **[Real Estate Price Prediction](#)** | *Data Science*  
-  📌 Built predictive models to estimate housing prices based on economic variables and market trends.  
-
-- 🛍️ **[Online Shopper Behavior Analysis](#)** | *Data Mining*  
-  📌 Identified purchasing patterns and optimized the conversion funnel using predictive analytics.  
-
-- 📈 **[Public Revenue Optimization](#)** | *Data Analytics*  
-  📌 Extracted key insights to improve financial performance for businesses and public institutions.  
-
----
-
-### 🌎 Connect With Me  
-
-📩 **Email**: martablarev@gmail.com  
-🔗 **LinkedIn**: [linkedin.com/in/marta-blanco-arev](https://www.linkedin.com/in/marta-blanco-arev)  
+</div>
 
 
 
