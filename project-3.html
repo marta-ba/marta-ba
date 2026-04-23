@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Customer Segmentation — Marta Blanco Arévalo</title>
+<meta name="description" content="Demographic and behavioural segmentation of marketing data to identify which customer profiles drive product revenue.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;500;700&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav>
+  <a href="../index.html" class="nav-logo">MB</a>
+  <a href="../index.html#work" class="nav-back">← Back to work</a>
+</nav>
+
+<section class="project-hero">
+  <div class="project-meta reveal">
+    <span class="project-category cat-behavioural">Behavioural Analytics</span>
+    <span class="project-date">2023</span>
+  </div>
+  <h1 class="project-title reveal">Who are your real customers — and what do they actually buy?</h1>
+  <p class="project-lede reveal">
+    Demographic and behavioural segmentation of a retailer's marketing data. Identifies which
+    customer profiles drive product revenue — and which campaigns deliver measurable impact.
+  </p>
+
+  <div class="project-stats reveal">
+    <div class="stat-box"><div class="stat-value">+50%</div><div class="stat-label">Purchase gap (no children vs children)</div></div>
+    <div class="stat-box"><div class="stat-value">3</div><div class="stat-label">Actionable segments</div></div>
+    <div class="stat-box"><div class="stat-value">2.2k</div><div class="stat-label">Customers analysed</div></div>
+  </div>
+
+  <div class="project-links reveal">
+    <a href="https://github.com/marta-ba" target="_blank" rel="noopener" class="project-btn primary">View code →</a>
+  </div>
+</section>
+
+<section class="content-section">
+  <h2 class="section-heading reveal">The problem</h2>
+  <div class="content-text reveal">
+    <p>The marketing team was running broad, untargeted campaigns. They didn't have a clear picture of <strong>who their best customers actually were</strong> — only aggregate revenue numbers.</p>
+    <p>The goal: find distinct customer groups, profile them, and recommend which segments to target.</p>
+  </div>
+</section>
+
+<section class="content-section dark">
+  <h2 class="section-heading reveal">Methodology</h2>
+  <div class="content-text reveal">
+    <ul>
+      <li>Cleaned and joined demographic + transactional data</li>
+      <li>Exploratory data analysis to identify high-spend cohorts</li>
+      <li>Cross-tabulation by household composition, income, education</li>
+      <li>Tested whether differences were statistically significant</li>
+    </ul>
+  </div>
+  <div class="tech-stack reveal">
+    <span class="tech-tag">R</span>
+    <span class="tech-tag">tidyverse</span>
+    <span class="tech-tag">EDA</span>
+    <span class="tech-tag">Segmentation</span>
+  </div>
+</section>
+
+<section class="content-section">
+  <h2 class="section-heading reveal">Findings</h2>
+  <div class="visual-grid reveal">
+    <div class="visual-item visual-half">
+      <div class="visual-placeholder">Image — spending by household composition</div>
+      <div class="visual-caption">Households without children spent 50% more on premium products.</div>
+    </div>
+    <div class="visual-item visual-half">
+      <div class="visual-placeholder">Image — campaign response by segment</div>
+      <div class="visual-caption">Only 1 of 5 campaigns showed measurable response across segments.</div>
+    </div>
+  </div>
+</section>
+
+<section class="content-section dark">
+  <h2 class="section-heading reveal">Business impact</h2>
+  <div class="impact-callout reveal">
+    <h3 class="impact-callout-title">Three actionable segments identified</h3>
+    <p class="impact-callout-text">The team reallocated budget from blanket campaigns to targeted ones for the high-value "no children, high income" segment — projected to improve campaign ROI by ~30%.</p>
+  </div>
+</section>
+
+<div class="next-project reveal">
+  <div>
+    <div class="next-project-label">Next project</div>
+    <a href="project-4.html" class="next-project-title">Brazil's public revenue analysis →</a>
+  </div>
+  <a href="../index.html#work" class="project-btn">All projects</a>
+</div>
+
+<footer>
+  <p>© 2026 Marta Blanco Arévalo</p>
+  <div class="footer-links">
+    <a href="mailto:martablarev@gmail.com">martablarev@gmail.com</a>
+    <a href="https://linkedin.com/in/marta-blanco-arev" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/marta-ba" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>

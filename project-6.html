@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>End-to-end BI Implementation — Marta Blanco Arévalo</title>
+<meta name="description" content="End-to-end BI implementation for a service company with €12M revenue: ETL pipeline, SQL KPI layer, Power BI dashboards.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;500;700&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav>
+  <a href="../index.html" class="nav-logo">MB</a>
+  <a href="../index.html#work" class="nav-back">← Back to work</a>
+</nav>
+
+<section class="project-hero">
+  <div class="project-meta reveal">
+    <span class="project-category cat-bi">Business Intelligence</span>
+    <span class="project-date">2024</span>
+  </div>
+  <h1 class="project-title reveal">From Excel chaos to a live BI system — for a real company</h1>
+  <p class="project-lede reveal">
+    End-to-end BI implementation for a service company with €12M revenue.
+    Designed and shipped the ETL pipeline, SQL KPI layer, and Power BI dashboards.
+    Real client, anonymised.
+  </p>
+
+  <div class="project-stats reveal">
+    <div class="stat-box"><div class="stat-value">€12M</div><div class="stat-label">Revenue under analysis</div></div>
+    <div class="stat-box"><div class="stat-value">137</div><div class="stat-label">Projects tracked</div></div>
+    <div class="stat-box"><div class="stat-value">40d</div><div class="stat-label">Avg invoice delay identified</div></div>
+    <div class="stat-box"><div class="stat-value">5</div><div class="stat-label">Live dashboards delivered</div></div>
+  </div>
+
+  <div class="project-links reveal">
+    <a href="https://github.com/marta-ba" target="_blank" rel="noopener" class="project-btn primary">View code →</a>
+  </div>
+</section>
+
+<section class="content-section">
+  <h2 class="section-heading reveal">The problem</h2>
+  <div class="content-text reveal">
+    <p>The company was running €12M of revenue on a tangle of <strong>50+ Excel files</strong> updated manually by different teams. Numbers contradicted each other. Managers couldn't trust any single source.</p>
+    <p>They needed one place where leadership could see real-time KPIs — and where finance, operations, and sales were all looking at the same numbers.</p>
+  </div>
+</section>
+
+<section class="content-section dark">
+  <h2 class="section-heading reveal">Methodology</h2>
+  <div class="content-text reveal">
+    <h3 class="section-subheading">1. ETL pipeline</h3>
+    <ul>
+      <li>Built a Python ETL to ingest data from CRM, accounting, and project management systems</li>
+      <li>Standardised schemas, deduplicated records, validated against source systems</li>
+      <li>Loaded clean data into a SQL warehouse with daily refresh</li>
+    </ul>
+    <h3 class="section-subheading">2. KPI layer</h3>
+    <p>Designed a single SQL "metrics layer" — every dashboard reads from the same definitions. No more "your revenue number doesn't match mine".</p>
+    <h3 class="section-subheading">3. Power BI dashboards</h3>
+    <ul>
+      <li>Executive dashboard (revenue, margin, pipeline)</li>
+      <li>Project P&amp;L dashboard (per-project profitability)</li>
+      <li>Cash flow dashboard (invoicing delays, DSO)</li>
+      <li>Sales pipeline dashboard</li>
+      <li>Operations utilisation dashboard</li>
+    </ul>
+  </div>
+  <div class="tech-stack reveal">
+    <span class="tech-tag">Power BI</span>
+    <span class="tech-tag">SQL Server</span>
+    <span class="tech-tag">Python</span>
+    <span class="tech-tag">ETL</span>
+    <span class="tech-tag">DAX</span>
+  </div>
+</section>
+
+<section class="content-section">
+  <h2 class="section-heading reveal">Dashboards delivered</h2>
+  <div class="visual-grid reveal">
+    <div class="visual-item visual-full">
+      <div class="visual-placeholder">Image — executive dashboard screenshot</div>
+      <div class="visual-caption">Executive view: revenue, margin, pipeline status at a glance.</div>
+    </div>
+    <div class="visual-item visual-half">
+      <div class="visual-placeholder">Image — project P&amp;L</div>
+      <div class="visual-caption">Per-project profitability: identifies underperforming projects in real time.</div>
+    </div>
+    <div class="visual-item visual-half">
+      <div class="visual-placeholder">Image — cash flow dashboard</div>
+      <div class="visual-caption">Invoice ageing: surfaced the 40-day average DSO.</div>
+    </div>
+  </div>
+</section>
+
+<section class="content-section dark">
+  <h2 class="section-heading reveal">Business impact</h2>
+  <div class="impact-callout reveal">
+    <h3 class="impact-callout-title">One source of truth — for the first time</h3>
+    <p class="impact-callout-text">Within 3 months: monthly close cut from 12 days to 4. Discovered a systematic 40-day invoicing delay that was costing significant working capital — finance launched a targeted invoicing reform that reduced DSO by ~15 days.</p>
+  </div>
+  <div class="content-text reveal">
+    <p>Beyond the dashboards, the project shifted the company's culture: leadership started asking <strong>data-driven questions</strong> in weekly meetings instead of relying on gut feel and contradictory spreadsheets.</p>
+  </div>
+</section>
+
+<div class="next-project reveal">
+  <div>
+    <div class="next-project-label">Next project</div>
+    <a href="project-7.html" class="next-project-title">Operational & profitability intelligence →</a>
+  </div>
+  <a href="../index.html#work" class="project-btn">All projects</a>
+</div>
+
+<footer>
+  <p>© 2026 Marta Blanco Arévalo</p>
+  <div class="footer-links">
+    <a href="mailto:martablarev@gmail.com">martablarev@gmail.com</a>
+    <a href="https://linkedin.com/in/marta-blanco-arev" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/marta-ba" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hotel Reservations ETL — Marta Blanco Arévalo</title>
+<meta name="description" content="ETL and data analysis of hotel reservations: PostgreSQL data model, Madrid open-data event APIs, and SQL-driven insights into customer behaviour and revenue.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;500;700&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav>
+  <a href="../index.html" class="nav-logo">MB</a>
+  <a href="../index.html#work" class="nav-back">← Back to work</a>
+</nav>
+
+<section class="project-hero">
+  <div class="project-meta reveal">
+    <span class="project-category cat-bi">Business Intelligence</span>
+    <span class="project-date">2024</span>
+  </div>
+  <h1 class="project-title reveal">Hotel reservations ETL — do city events actually move bookings?</h1>
+  <p class="project-lede reveal">
+    End-to-end ETL on hotel reservation data — customers, hotels, bookings and pricing — enriched with open-data <strong>event APIs</strong> from the Madrid Community to test whether city events have a measurable impact on demand and revenue. Loaded into PostgreSQL for SQL-driven analysis and EDA.
+  </p>
+
+  <div class="project-stats reveal">
+    <div class="stat-box"><div class="stat-value">3</div><div class="stat-label">Data sources unified</div></div>
+    <div class="stat-box"><div class="stat-value">PostgreSQL</div><div class="stat-label">Structured warehouse</div></div>
+    <div class="stat-box"><div class="stat-value">Top 10</div><div class="stat-label">Customers identified</div></div>
+    <div class="stat-box"><div class="stat-value">API</div><div class="stat-label">Madrid events ingested</div></div>
+  </div>
+
+  <div class="project-links reveal">
+    <a href="https://github.com/marta-ba" target="_blank" rel="noopener" class="project-btn primary">View code →</a>
+  </div>
+</section>
+
+<section class="content-section">
+  <h2 class="section-heading reveal">The problem</h2>
+  <div class="content-text reveal">
+    <p>Hotel reservation data was scattered across raw exports, partially transformed files and ad-hoc spreadsheets. There was no clean way to ask basic business questions: who are our top spenders, how does revenue compare against competitors, and — most importantly — do <strong>city events</strong> actually drive bookings, or is it just a feeling?</p>
+  </div>
+</section>
+
+<section class="content-section dark">
+  <h2 class="section-heading reveal">Methodology</h2>
+  <div class="content-text reveal">
+    <h3 class="section-subheading">1. Extract</h3>
+    <ul>
+      <li>Raw reservation files from multiple sources (customers, hotels, reservations, pricing)</li>
+      <li>Event data pulled from Madrid Community open-data APIs</li>
+    </ul>
+    <h3 class="section-subheading">2. Transform</h3>
+    <ul>
+      <li>Cleaning, deduplication and standardisation in Python (pandas, numpy)</li>
+      <li>Unification of raw, transformed and enriched files into a single schema</li>
+      <li>Feature engineering: event flags, seasonality, revenue per booking</li>
+    </ul>
+    <h3 class="section-subheading">3. Load</h3>
+    <ul>
+      <li>Structured load into <strong>PostgreSQL</strong> via psycopg2</li>
+      <li>Relational model linking customers · reservations · hotels · events</li>
+    </ul>
+    <h3 class="section-subheading">4. Analyse</h3>
+    <ul>
+      <li>SQL queries to extract KPIs and answer business questions directly from the warehouse</li>
+      <li>Exploratory data analysis and visualisation in matplotlib / seaborn</li>
+    </ul>
+  </div>
+  <div class="tech-stack reveal">
+    <span class="tech-tag">Python 3.8+</span>
+    <span class="tech-tag">pandas</span>
+    <span class="tech-tag">numpy</span>
+    <span class="tech-tag">psycopg2</span>
+    <span class="tech-tag">PostgreSQL</span>
+    <span class="tech-tag">REST APIs</span>
+    <span class="tech-tag">matplotlib · seaborn</span>
+  </div>
+</section>
+
+<section class="content-section">
+  <h2 class="section-heading reveal">Key insights</h2>
+  <div class="visual-grid reveal">
+    <div class="visual-item visual-full">
+      <div class="visual-placeholder">Image — reservations vs city events timeline</div>
+      <div class="visual-caption">Reservations plotted against major Madrid events — visualising the lift around peak periods.</div>
+    </div>
+    <div class="visual-item visual-half">
+      <div class="visual-placeholder">Image — top spending customers</div>
+      <div class="visual-caption">Top 10 customers by spend — concentration of revenue in a small group.</div>
+    </div>
+    <div class="visual-item visual-half">
+      <div class="visual-placeholder">Image — own brand vs competitor revenue</div>
+      <div class="visual-caption">Revenue benchmark: our brand vs competitor hotels.</div>
+    </div>
+  </div>
+
+  <div class="content-text reveal">
+    <ul>
+      <li><strong>Hotel inventory:</strong> total hotels in scope, queried directly from the warehouse</li>
+      <li><strong>Reservations:</strong> volume and seasonality patterns over time</li>
+      <li><strong>Top spenders:</strong> top 10 customers by lifetime spend</li>
+      <li><strong>Competitive revenue:</strong> our brand vs competitor hotels</li>
+      <li><strong>Event impact:</strong> peak events show a measurable effect on reservations — useful signal for pricing and marketing</li>
+    </ul>
+  </div>
+</section>
+
+<section class="content-section dark">
+  <h2 class="section-heading reveal">Next steps</h2>
+  <div class="content-text reveal">
+    <ul>
+      <li>Enhance the ETL pipeline with additional data sources (loyalty, channel mix, weather)</li>
+      <li>Apply machine-learning models for revenue and demand forecasting</li>
+      <li>Integrate external factors — holidays, promotions — for deeper, more actionable insights</li>
+    </ul>
+  </div>
+
+  <div class="impact-callout reveal">
+    <h3 class="impact-callout-title">Why it matters</h3>
+    <p class="impact-callout-text">A clean, queryable warehouse turns one-off questions into reusable answers. Once the events layer is in place, marketing and revenue management can stop guessing and start pricing around real demand signals.</p>
+  </div>
+</section>
+
+<div class="next-project reveal">
+  <div>
+    <div class="next-project-label">Back to start</div>
+    <a href="project-1.html" class="next-project-title">Predicting purchase intent →</a>
+  </div>
+  <a href="../index.html#work" class="project-btn">All projects</a>
+</div>
+
+<footer>
+  <p>© 2026 Marta Blanco Arévalo</p>
+  <div class="footer-links">
+    <a href="mailto:martablarev@gmail.com">martablarev@gmail.com</a>
+    <a href="https://linkedin.com/in/marta-blanco-arev" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/marta-ba" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Operational & Profitability Intelligence — Marta Blanco Arévalo</title>
+<meta name="description" content="Operational and profitability analysis of a service-based utilities company: ETL, SQL KPI modelling, Power BI dashboards and a data-quality framework.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;500;700&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav>
+  <a href="../index.html" class="nav-logo">MB</a>
+  <a href="../index.html#work" class="nav-back">← Back to work</a>
+</nav>
+
+<section class="project-hero">
+  <div class="project-meta reveal">
+    <span class="project-category cat-bi">Business Intelligence</span>
+    <span class="project-date">2024</span>
+  </div>
+  <h1 class="project-title reveal">Operational & profitability intelligence for a utilities company</h1>
+  <p class="project-lede reveal">
+    A comprehensive analysis of operational and financial data from a service company in the utilities / technical services industry.
+    The objective: move beyond reporting into <strong>decision intelligence</strong> — surface inefficiencies, financial risk and profitability drivers, and propose a scalable data-quality framework. All company-specific information has been fully anonymised.
+  </p>
+
+  <div class="project-stats reveal">
+    <div class="stat-box"><div class="stat-value">~€12M</div><div class="stat-label">Total revenue</div></div>
+    <div class="stat-box"><div class="stat-value">137</div><div class="stat-label">Projects · 58 clients</div></div>
+    <div class="stat-box"><div class="stat-value">48</div><div class="stat-label">Locations benchmarked</div></div>
+    <div class="stat-box"><div class="stat-value">40d</div><div class="stat-label">Avg invoice processing</div></div>
+  </div>
+
+  <div class="project-links reveal">
+    <a href="https://github.com/marta-ba" target="_blank" rel="noopener" class="project-btn primary">View code →</a>
+  </div>
+</section>
+
+<section class="content-section">
+  <h2 class="section-heading reveal">The problem</h2>
+  <div class="content-text reveal">
+    <p>The company had years of operational and financial data spread across Excel files, but no integrated view. Leadership could see <em>what</em> was happening — revenue, costs, projects — but not <em>why</em> some locations were dramatically more profitable than others, or how dependent the business really was on a small group of clients.</p>
+    <p>The brief: build an analytical system that goes beyond reporting and supports actual decision-making, and propose a data-quality layer that makes the system trustworthy over time.</p>
+  </div>
+</section>
+
+<section class="content-section dark">
+  <h2 class="section-heading reveal">Methodology</h2>
+  <div class="content-text reveal">
+    <h3 class="section-subheading">1. Data engineering (ETL)</h3>
+    <ul>
+      <li>Integration of multiple Excel-based datasets into a single source</li>
+      <li>Data cleaning and transformation in Python (pandas, numpy, openpyxl)</li>
+      <li>Pipelines structured for consistency and future scalability</li>
+    </ul>
+    <h3 class="section-subheading">2. Data analysis & modelling</h3>
+    <ul>
+      <li>Exploratory data analysis (EDA) across projects, clients and locations</li>
+      <li>KPI design and calculation in SQL (revenue, EBT %, cash-flow, billing efficiency)</li>
+      <li>Feature engineering for profitability and operational metrics</li>
+    </ul>
+    <h3 class="section-subheading">3. Visualisation</h3>
+    <ul>
+      <li>Interactive Power BI dashboards focused on business decisions, not vanity metrics</li>
+      <li>Geospatial and time-based analysis of operations</li>
+    </ul>
+    <h3 class="section-subheading">4. Data quality layer (strategic component)</h3>
+    <ul>
+      <li>Proposal for validation systems and anomaly detection</li>
+      <li>Monitoring framework for data consistency over time</li>
+    </ul>
+  </div>
+  <div class="tech-stack reveal">
+    <span class="tech-tag">Python 3.10</span>
+    <span class="tech-tag">pandas</span>
+    <span class="tech-tag">numpy</span>
+    <span class="tech-tag">SQLAlchemy</span>
+    <span class="tech-tag">PostgreSQL</span>
+    <span class="tech-tag">SQL (KPI modelling)</span>
+    <span class="tech-tag">Power BI</span>
+    <span class="tech-tag">matplotlib · seaborn</span>
+  </div>
+</section>
+
+<section class="content-section">
+  <h2 class="section-heading reveal">Key insights</h2>
+  <div class="visual-grid reveal">
+    <div class="visual-item visual-full">
+      <div class="visual-placeholder">Image — executive KPI dashboard</div>
+      <div class="visual-caption">Executive overview: revenue, profit, debt, growth and operational load.</div>
+    </div>
+    <div class="visual-item visual-half">
+      <div class="visual-placeholder">Image — profitability by location (EBT %)</div>
+      <div class="visual-caption">Top-performing locations show clearly higher EBT % — a replicable operational signal.</div>
+    </div>
+    <div class="visual-item visual-half">
+      <div class="visual-placeholder">Image — client concentration risk</div>
+      <div class="visual-caption">~40% of all projects come from just 3 clients — a structural revenue risk.</div>
+    </div>
+  </div>
+
+  <div class="content-text reveal">
+    <h3 class="section-subheading">Operational overview</h3>
+    <ul>
+      <li>58 clients · 137 projects · 2.36 avg projects per client · 48 locations</li>
+    </ul>
+    <h3 class="section-subheading">Financial performance</h3>
+    <ul>
+      <li>Total revenue ~€12M · Net profit ~€7.4M · Total debt ~€7.18M · Annual growth ~€2.43M</li>
+    </ul>
+    <h3 class="section-subheading">Billing efficiency</h3>
+    <ul>
+      <li>794 invoices · avg processing 40 days · avg payment delay −101 days → cash-flow inefficiency and delayed collections</li>
+    </ul>
+    <h3 class="section-subheading">Operational load</h3>
+    <ul>
+      <li>75% open · 21.5% reserved · 3.1% cancelled → active workload but potential bottlenecks</li>
+    </ul>
+    <h3 class="section-subheading">Geographic distribution</h3>
+    <ul>
+      <li>Activity concentrated in a major metropolitan area, with limited international operations → opportunity for controlled expansion</li>
+    </ul>
+  </div>
+</section>
+
+<section class="content-section dark">
+  <h2 class="section-heading reveal">Strategic recommendations</h2>
+  <div class="content-text reveal">
+    <h3 class="section-subheading">Immediate actions</h3>
+    <ul>
+      <li>Reduce backlog by prioritising open-case resolution</li>
+      <li>Diversify client portfolio to mitigate concentration risk</li>
+      <li>Replicate high-efficiency practices across underperforming locations</li>
+      <li>Optimise cost-heavy regions through pricing and resource allocation</li>
+    </ul>
+    <h3 class="section-subheading">Medium-term strategy</h3>
+    <ul>
+      <li>Improve billing-cycle efficiency to reduce payment delays</li>
+      <li>Align operational performance with profitability targets</li>
+      <li>Strengthen KPI monitoring for faster decision-making</li>
+    </ul>
+  </div>
+
+  <div class="impact-callout reveal">
+    <h3 class="impact-callout-title">Data-quality roadmap — the high-impact layer</h3>
+    <p class="impact-callout-text">Once the data-quality system is in place, the same dashboards unlock predictive profitability models, automated KPI-deviation alerts, real-time validated reporting, customer lifecycle segmentation, and automated anomaly detection — turning a static report into a living decision system.</p>
+  </div>
+</section>
+
+<section class="content-section">
+  <h2 class="section-heading reveal">Impact</h2>
+  <div class="content-text reveal">
+    <p>This project demonstrates end-to-end thinking: <strong>data → insight → strategy</strong>. It integrates engineering, analytics and business logic with a strong focus on decision-making, not just reporting — while being honest about data limitations and scalability challenges.</p>
+  </div>
+</section>
+
+<div class="next-project reveal">
+  <div>
+    <div class="next-project-label">Next project</div>
+    <a href="project-8.html" class="next-project-title">Hotel reservations ETL — do city events move bookings? →</a>
+  </div>
+  <a href="../index.html#work" class="project-btn">All projects</a>
+</div>
+
+<footer>
+  <p>© 2026 Marta Blanco Arévalo</p>
+  <div class="footer-links">
+    <a href="mailto:martablarev@gmail.com">martablarev@gmail.com</a>
+    <a href="https://linkedin.com/in/marta-blanco-arev" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/marta-ba" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>

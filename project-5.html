@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Wholesale Paradox — Marta Blanco Arévalo</title>
+<meta name="description" content="Cost-benefit analysis of 8,847 wholesale transactions revealing that volume growth was actively destroying margin.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;500;700&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav>
+  <a href="../index.html" class="nav-logo">MB</a>
+  <a href="../index.html#work" class="nav-back">← Back to work</a>
+</nav>
+
+<section class="project-hero">
+  <div class="project-meta reveal">
+    <span class="project-category cat-financial">Financial Analytics</span>
+    <span class="project-date">2023</span>
+  </div>
+  <h1 class="project-title reveal">High sales, low profit — the wholesale paradox</h1>
+  <p class="project-lede reveal">
+    Cost-benefit analysis of 8,847 wholesale transactions (2012–2014). Reveals the
+    counterintuitive finding that volume growth was actively destroying margin.
+  </p>
+
+  <div class="project-stats reveal">
+    <div class="stat-box"><div class="stat-value">−0.43</div><div class="stat-label">Quantity ↔ profit correlation</div></div>
+    <div class="stat-box"><div class="stat-value">8,847</div><div class="stat-label">Transactions analysed</div></div>
+    <div class="stat-box"><div class="stat-value">3 yrs</div><div class="stat-label">Of sales data</div></div>
+  </div>
+
+  <div class="project-links reveal">
+    <a href="https://github.com/marta-ba" target="_blank" rel="noopener" class="project-btn primary">View code →</a>
+  </div>
+</section>
+
+<section class="content-section">
+  <h2 class="section-heading reveal">The problem</h2>
+  <div class="content-text reveal">
+    <p>The wholesale division was celebrating record-breaking sales volume — but profit margins kept shrinking. <strong>Was high volume actually destroying value?</strong></p>
+    <p>The CFO needed a clear answer to decide whether to push for more growth or pivot to margin protection.</p>
+  </div>
+</section>
+
+<section class="content-section dark">
+  <h2 class="section-heading reveal">Methodology</h2>
+  <div class="content-text reveal">
+    <ul>
+      <li>Cleaned 8,847 transaction records (2012–2014) in Excel + Power Query</li>
+      <li>Computed gross margin, contribution margin, and discount depth per transaction</li>
+      <li>Built KPI dashboard with conditional formatting and dynamic filters</li>
+      <li>Ran correlation analysis between order quantity and unit profit</li>
+    </ul>
+  </div>
+  <div class="tech-stack reveal">
+    <span class="tech-tag">Excel</span>
+    <span class="tech-tag">Power Query</span>
+    <span class="tech-tag">KPI Design</span>
+    <span class="tech-tag">Profitability Analysis</span>
+  </div>
+</section>
+
+<section class="content-section">
+  <h2 class="section-heading reveal">The paradox</h2>
+  <div class="visual-grid reveal">
+    <div class="visual-item visual-half">
+      <div class="visual-placeholder">Image — quantity vs profit scatter</div>
+      <div class="visual-caption">Negative correlation (−0.43): bigger orders meant deeper discounts and lower per-unit profit.</div>
+    </div>
+    <div class="visual-item visual-half">
+      <div class="visual-placeholder">Image — margin trend by year</div>
+      <div class="visual-caption">Volume up 22%, margin down 18% over the same period.</div>
+    </div>
+  </div>
+</section>
+
+<section class="content-section dark">
+  <h2 class="section-heading reveal">Business impact</h2>
+  <div class="impact-callout reveal">
+    <h3 class="impact-callout-title">Reframed the growth strategy</h3>
+    <p class="impact-callout-text">Findings led to a tiered discount policy: above-threshold orders required margin approval. Within 6 months, average gross margin recovered ~4 points without a meaningful drop in volume.</p>
+  </div>
+</section>
+
+<div class="next-project reveal">
+  <div>
+    <div class="next-project-label">Next project</div>
+    <a href="project-6.html" class="next-project-title">From Excel chaos to a live BI system →</a>
+  </div>
+  <a href="../index.html#work" class="project-btn">All projects</a>
+</div>
+
+<footer>
+  <p>© 2026 Marta Blanco Arévalo</p>
+  <div class="footer-links">
+    <a href="mailto:martablarev@gmail.com">martablarev@gmail.com</a>
+    <a href="https://linkedin.com/in/marta-blanco-arev" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/marta-ba" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>

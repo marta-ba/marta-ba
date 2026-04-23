@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marta Blanco Arévalo — Data Specialist Portfolio</title>
+<meta name="description" content="Data specialist based in Copenhagen — behavioural analytics, business intelligence, financial data and data quality.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;500;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav>
+  <a href="#top" class="nav-logo">MB</a>
+  <ul class="nav-links">
+    <li><a href="#work">Work</a></li>
+    <li><a href="#toolkit">Toolkit</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="mailto:martablarev@gmail.com">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero" id="top">
+  <div class="hero-center">
+    <div class="hero-main">
+      <div class="hero-copy">
+        <div class="hero-greeting">Portfolio · 2026</div>
+        <h1>
+          <span class="name-word">Marta</span>
+          <span class="name-word">Blanco</span>
+          <span class="name-word">Arévalo</span>
+        </h1>
+        <div class="hero-welcome">Data specialist · Copenhagen</div>
+        <p class="hero-tagline">
+          I turn messy data into <strong>decisions</strong> — through behavioural analytics,
+          business intelligence and a sociologist's eye for the <em>why</em> behind the numbers.
+        </p>
+        <div class="hero-actions">
+          <a href="#work" class="btn btn-dark">View work</a>
+          <a href="mailto:martablarev@gmail.com" class="btn btn-outline">Get in touch</a>
+        </div>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat-card">
+          <div class="stat-num" data-target="8" data-suffix="+">0</div>
+          <div class="stat-label">Projects</div>
+          <div class="stat-meta">Shipped end-to-end</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num" data-target="5" data-suffix="+">0</div>
+          <div class="stat-label">Industries</div>
+          <div class="stat-meta">Retail · Public · Fintech · BI · Hospitality</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num" data-target="20" data-suffix="+">0</div>
+          <div class="stat-label">Hours saved / week</div>
+          <div class="stat-meta">Through process automation</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num" data-target="3" data-suffix="+">0</div>
+          <div class="stat-label">Years in data</div>
+          <div class="stat-meta">From sociology to analytics</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-bottom">
+    <div class="hero-location">Copenhagen, DK · Available for opportunities</div>
+    <div class="hero-scroll">Scroll</div>
+  </div>
+</section>
+
+<section class="section" id="work">
+  <div class="section-label">Selected projects</div>
+
+  <div class="filter-row reveal">
+    <button class="filter-btn active" onclick="filterProjects('all',this)">All</button>
+    <button class="filter-btn" onclick="filterProjects('behavioural',this)">Behavioural Analytics</button>
+    <button class="filter-btn" onclick="filterProjects('financial',this)">Financial Analytics</button>
+    <button class="filter-btn" onclick="filterProjects('bi',this)">Business Intelligence</button>
+  </div>
+
+  <div class="projects-grid">
+
+    <a href="projects/project-1.html" class="project-card card-lg reveal" data-cat="behavioural">
+      <div class="card-header">
+        <span class="card-category cat-behavioural">Behavioural Analytics</span>
+        <span class="card-num">01</span>
+      </div>
+      <h3 class="card-title">Predicting who's about to buy — before they click checkout</h3>
+      <p class="card-desc">Built a purchase-intent classifier on 12,330 e-commerce sessions. Identifies high-intent visitors in real time to trigger conversion actions at exactly the right moment.</p>
+      <div class="card-tags">
+        <span class="tag-pill">R</span><span class="tag-pill">Random Forest</span><span class="tag-pill">SMOTE</span><span class="tag-pill">Classification</span>
+      </div>
+      <div class="card-impact">
+        <div class="impact-stat"><span class="impact-num">87%</span><span class="impact-label">Model accuracy</span></div>
+        <div class="impact-stat"><span class="impact-num">+€11.7k</span><span class="impact-label">Projected uplift</span></div>
+        <div class="impact-stat"><span class="impact-num">78%</span><span class="impact-label">Buyer recall</span></div>
+      </div>
+      <span class="card-arrow">↗</span>
+    </a>
+
+    <a href="projects/project-2.html" class="project-card card-sm reveal" data-cat="behavioural">
+      <div class="card-header">
+        <span class="card-category cat-behavioural">Behavioural Analytics</span>
+        <span class="card-num">02</span>
+      </div>
+      <h3 class="card-title">Measuring what ads actually cause — not just correlate</h3>
+      <p class="card-desc">A/B test framework separating genuine ad lift from background conversion noise. Statistical significance testing + causal inference mindset.</p>
+      <div class="card-tags">
+        <span class="tag-pill">Python</span><span class="tag-pill">Hypothesis Testing</span><span class="tag-pill">Causal Inference</span>
+      </div>
+      <div class="card-impact">
+        <div class="impact-stat"><span class="impact-num">2</span><span class="impact-label">Business questions</span></div>
+        <div class="impact-stat"><span class="impact-num">95%</span><span class="impact-label">Confidence threshold</span></div>
+      </div>
+      <span class="card-arrow">↗</span>
+    </a>
+
+    <a href="projects/project-3.html" class="project-card card-sm reveal" data-cat="behavioural">
+      <div class="card-header">
+        <span class="card-category cat-behavioural">Behavioural Analytics</span>
+        <span class="card-num">03</span>
+      </div>
+      <h3 class="card-title">Who are your real customers — and what do they actually buy?</h3>
+      <p class="card-desc">Demographic and behavioural segmentation of marketing data. Identifies which profiles drive product revenue and which campaigns have measurable impact.</p>
+      <div class="card-tags">
+        <span class="tag-pill">R</span><span class="tag-pill">EDA</span><span class="tag-pill">Segmentation</span>
+      </div>
+      <div class="card-impact">
+        <div class="impact-stat"><span class="impact-num">+50%</span><span class="impact-label">Purchase gap</span></div>
+        <div class="impact-stat"><span class="impact-num">3</span><span class="impact-label">Segments identified</span></div>
+      </div>
+      <span class="card-arrow">↗</span>
+    </a>
+
+    <a href="projects/project-4.html" class="project-card card-lg reveal" data-cat="financial">
+      <div class="card-header">
+        <span class="card-category cat-financial">Financial Analytics</span>
+        <span class="card-num">04</span>
+      </div>
+      <h3 class="card-title">Where did Brazil's public revenue go? 7 years of budget execution failures</h3>
+      <p class="card-desc">Analysis of forecast vs. actual revenue collection across Brazilian public institutions (2013–2021). Identifies systemic underperformers and proposes accountability mechanisms.</p>
+      <div class="card-tags">
+        <span class="tag-pill">Python</span><span class="tag-pill">pandas</span><span class="tag-pill">Public Finance</span><span class="tag-pill">EDA</span>
+      </div>
+      <div class="card-impact">
+        <div class="impact-stat"><span class="impact-num">&lt;6%</span><span class="impact-label">Worst execution rate</span></div>
+        <div class="impact-stat"><span class="impact-num">7 yrs</span><span class="impact-label">Of data analysed</span></div>
+        <div class="impact-stat"><span class="impact-num">0</span><span class="impact-label">Improvement trend</span></div>
+      </div>
+      <span class="card-arrow">↗</span>
+    </a>
+
+    <a href="projects/project-5.html" class="project-card card-md reveal" data-cat="financial">
+      <div class="card-header">
+        <span class="card-category cat-financial">Financial Analytics</span>
+        <span class="card-num">05</span>
+      </div>
+      <h3 class="card-title">High sales, low profit — the wholesale paradox</h3>
+      <p class="card-desc">Cost-benefit analysis of 8,847 wholesale transactions (2012–2014). Reveals the counterintuitive finding that volume growth was actively destroying margin.</p>
+      <div class="card-tags">
+        <span class="tag-pill">Excel</span><span class="tag-pill">KPI Design</span><span class="tag-pill">Profitability</span>
+      </div>
+      <div class="card-impact">
+        <div class="impact-stat"><span class="impact-num">−0.43</span><span class="impact-label">Quantity ↔ profit</span></div>
+        <div class="impact-stat"><span class="impact-num">8,847</span><span class="impact-label">Transactions</span></div>
+      </div>
+      <span class="card-arrow">↗</span>
+    </a>
+
+    <a href="projects/project-6.html" class="project-card card-md reveal" data-cat="bi">
+      <div class="card-header">
+        <span class="card-category cat-bi">Business Intelligence</span>
+        <span class="card-num">06</span>
+      </div>
+      <h3 class="card-title">From Excel chaos to a live BI system — for a real company</h3>
+      <p class="card-desc">End-to-end BI implementation for a service company with €12M revenue. ETL pipeline, SQL KPI layer, Power BI dashboards. Real client, anonymised.</p>
+      <div class="card-tags">
+        <span class="tag-pill">Power BI</span><span class="tag-pill">SQL</span><span class="tag-pill">ETL</span><span class="tag-pill">Python</span>
+      </div>
+      <div class="card-impact">
+        <div class="impact-stat"><span class="impact-num">€12M</span><span class="impact-label">Revenue analysed</span></div>
+        <div class="impact-stat"><span class="impact-num">137</span><span class="impact-label">Projects tracked</span></div>
+        <div class="impact-stat"><span class="impact-num">40d</span><span class="impact-label">Avg invoice delay</span></div>
+      </div>
+      <span class="card-arrow">↗</span>
+    </a>
+
+    <a href="projects/project-7.html" class="project-card card-lg reveal" data-cat="bi">
+      <div class="card-header">
+        <span class="card-category cat-bi">Business Intelligence</span>
+        <span class="card-num">07</span>
+      </div>
+      <h3 class="card-title">Operational & profitability intelligence for a utilities company</h3>
+      <p class="card-desc">From reporting to decision intelligence: ETL, SQL KPI modelling and Power BI dashboards uncovering cash-flow inefficiencies, client concentration risk and replicable best practices across 48 locations.</p>
+      <div class="card-tags">
+        <span class="tag-pill">Python</span><span class="tag-pill">SQL</span><span class="tag-pill">Power BI</span><span class="tag-pill">Data Quality</span>
+      </div>
+      <div class="card-impact">
+        <div class="impact-stat"><span class="impact-num">~€12M</span><span class="impact-label">Revenue analysed</span></div>
+        <div class="impact-stat"><span class="impact-num">40%</span><span class="impact-label">Revenue from 3 clients</span></div>
+        <div class="impact-stat"><span class="impact-num">48</span><span class="impact-label">Locations benchmarked</span></div>
+      </div>
+      <span class="card-arrow">↗</span>
+    </a>
+
+    <a href="projects/project-8.html" class="project-card card-sm reveal" data-cat="bi">
+      <div class="card-header">
+        <span class="card-category cat-bi">Business Intelligence</span>
+        <span class="card-num">08</span>
+      </div>
+      <h3 class="card-title">Hotel reservations ETL — do city events actually move bookings?</h3>
+      <p class="card-desc">End-to-end ETL pipeline for hotel reservation data, enriched with Madrid open-data event APIs and stored in PostgreSQL to test whether city events drive demand and revenue.</p>
+      <div class="card-tags">
+        <span class="tag-pill">Python</span><span class="tag-pill">PostgreSQL</span><span class="tag-pill">APIs</span><span class="tag-pill">EDA</span>
+      </div>
+      <div class="card-impact">
+        <div class="impact-stat"><span class="impact-num">3</span><span class="impact-label">Data sources unified</span></div>
+        <div class="impact-stat"><span class="impact-num">Top 10</span><span class="impact-label">Customers identified</span></div>
+      </div>
+      <span class="card-arrow">↗</span>
+    </a>
+
+  </div>
+</section>
+
+<section class="section" id="toolkit">
+  <div class="section-label">Toolkit</div>
+  <h2 class="section-title reveal">A practical and <em>growing</em> stack.</h2>
+  <p class="section-intro reveal">From SQL queries to predictive models and BI dashboards: the tools I reach for to turn raw data into reliable, business-ready decisions.</p>
+
+  <div class="toolkit-grid">
+
+    <div class="toolkit-card reveal" data-accent="ink">
+      <div class="toolkit-head">
+        <span class="toolkit-num">Languages</span>
+        <h3 class="toolkit-title">Querying & scripting</h3>
+      </div>
+      <ul class="toolkit-list">
+        <li>SQL (PostgreSQL, T-SQL)</li>
+        <li>Python (pandas, scikit-learn)</li>
+        <li>R (tidyverse, caret)</li>
+        <li>HTML / CSS</li>
+      </ul>
+    </div>
+
+    <div class="toolkit-card reveal" data-accent="g">
+      <div class="toolkit-head">
+        <span class="toolkit-num">Analytics & BI</span>
+        <h3 class="toolkit-title">From numbers to dashboards</h3>
+      </div>
+      <ul class="toolkit-list">
+        <li>Power BI</li>
+        <li>Tableau</li>
+        <li>Excel (advanced · Power Query)</li>
+        <li>KPI design</li>
+      </ul>
+    </div>
+
+    <div class="toolkit-card reveal" data-accent="b">
+      <div class="toolkit-head">
+        <span class="toolkit-num">Data Engineering</span>
+        <h3 class="toolkit-title">Pipelines & infrastructure</h3>
+      </div>
+      <ul class="toolkit-list">
+        <li>ETL pipelines</li>
+        <li>API ingestion</li>
+        <li>Data modelling</li>
+        <li>Pipeline automation</li>
+      </ul>
+    </div>
+
+    <div class="toolkit-card reveal" data-accent="r">
+      <div class="toolkit-head">
+        <span class="toolkit-num">Data Science</span>
+        <h3 class="toolkit-title">Models & experimentation</h3>
+      </div>
+      <ul class="toolkit-list">
+        <li>Machine learning</li>
+        <li>A/B testing</li>
+        <li>Clustering & segmentation</li>
+        <li>Predictive modelling</li>
+      </ul>
+    </div>
+
+    <div class="toolkit-card reveal" data-accent="a">
+      <div class="toolkit-head">
+        <span class="toolkit-num">Data Quality</span>
+        <h3 class="toolkit-title">Trustworthy by design</h3>
+      </div>
+      <ul class="toolkit-list">
+        <li>Validation frameworks</li>
+        <li>Data documentation</li>
+        <li>Source-of-truth design</li>
+        <li>Governance processes</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="section-label">About</div>
+  <h2 class="section-title reveal">A sociologist who fell in love with data.</h2>
+
+  <div class="about-wrap">
+    <div class="about-text reveal">
+      <p>I'm a data specialist based in <strong>Copenhagen</strong>, originally from southern Spain. My background is unusual: I started in <strong>sociology</strong> before moving into data — which means I ask different questions than most analysts. I care about the <em>why</em> behind people's behaviour in models, not just what the numbers say.</p>
+
+      <blockquote class="about-quote">
+        "Good data work is half technical, half human — you have to understand the business as deeply as the model."
+      </blockquote>
+
+      <p>Right now, I'm focused on <strong>process automation</strong> so I can spend more time improving <strong>data quality at the source</strong>. I'm especially interested in <strong>fintech, consumer insights and sustainability</strong> — fields where rigorous data work has real-world consequences.</p>
+    </div>
+
+    <aside class="about-side reveal">
+      <div class="about-side-block">
+        <h4>Based in</h4>
+        <p>Copenhagen, Denmark 🇩🇰</p>
+      </div>
+      <div class="about-side-block">
+        <h4>Languages</h4>
+        <p>Spanish (native) · English (fluent) · Danish (learning)</p>
+      </div>
+      <div class="about-side-block">
+        <h4>Currently exploring</h4>
+        <div class="about-tags">
+          <span class="about-tag">Fintech</span>
+          <span class="about-tag">Consumer insights</span>
+          <span class="about-tag">Sustainability</span>
+          <span class="about-tag">Causal inference</span>
+        </div>
+      </div>
+      <div class="about-side-block">
+        <h4>Let's talk</h4>
+        <a href="mailto:martablarev@gmail.com">martablarev@gmail.com →</a>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Marta Blanco Arévalo</p>
+  <div class="footer-links">
+    <a href="mailto:martablarev@gmail.com">martablarev@gmail.com</a>
+    <a href="https://linkedin.com/in/marta-blanco-arev" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/marta-ba" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

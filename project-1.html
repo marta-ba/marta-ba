@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Predicting Purchase Intent — Marta Blanco Arévalo</title>
+<meta name="description" content="Built a purchase-intent classifier on 12,330 e-commerce sessions using R and Random Forest. Identifies high-intent visitors in real time.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;500;700&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav>
+  <a href="../index.html" class="nav-logo">MB</a>
+  <a href="../index.html#work" class="nav-back">← Back to work</a>
+</nav>
+
+<section class="project-hero">
+  <div class="project-meta reveal">
+    <span class="project-category cat-behavioural">Behavioural Analytics</span>
+    <span class="project-date">March 2024</span>
+  </div>
+
+  <h1 class="project-title reveal">Predicting who's about to buy — before they click checkout</h1>
+
+  <p class="project-lede reveal">
+    An e-commerce retailer was losing 89% of visitors without a purchase. I built a machine
+    learning classifier to identify high-intent users in real time, enabling targeted
+    interventions at the critical moment.
+  </p>
+
+  <div class="project-stats reveal">
+    <div class="stat-box"><div class="stat-value">87%</div><div class="stat-label">Model accuracy</div></div>
+    <div class="stat-box"><div class="stat-value">78%</div><div class="stat-label">Buyer recall</div></div>
+    <div class="stat-box"><div class="stat-value">+€11.7k</div><div class="stat-label">Projected uplift</div></div>
+    <div class="stat-box"><div class="stat-value">12,330</div><div class="stat-label">Sessions analysed</div></div>
+  </div>
+
+  <div class="project-links reveal">
+    <a href="https://github.com/marta-ba" target="_blank" rel="noopener" class="project-btn primary">View code →</a>
+    <a href="#" class="project-btn">Read full report →</a>
+  </div>
+</section>
+
+<section class="content-section">
+  <h2 class="section-heading reveal">The problem</h2>
+  <div class="content-text reveal">
+    <p>An online fashion retailer was seeing traffic grow month-over-month, but conversion rate remained stuck at 11%. The marketing team was spending heavily on acquisition, but 89% of visitors were leaving without purchasing.</p>
+    <p><strong>The question:</strong> Could we identify high-intent visitors before they left, and trigger interventions (discount codes, chat nudges, exit-intent popups) at precisely the right moment?</p>
+    <p>This required a model that could:</p>
+    <ul>
+      <li>Predict purchase intent from session behaviour alone</li>
+      <li>Work in real time (not post-session analysis)</li>
+      <li>Handle severe class imbalance (11% buyers vs 89% non-buyers)</li>
+    </ul>
+  </div>
+</section>
+
+<section class="content-section dark">
+  <h2 class="section-heading reveal">Methodology</h2>
+  <div class="content-text reveal">
+    <h3 class="section-subheading">1. Data preparation</h3>
+    <p>Worked with 12,330 e-commerce sessions from a UCI dataset. Features included:</p>
+    <ul>
+      <li><strong>Behavioural:</strong> Page views, bounce rates, exit rates, time on page</li>
+      <li><strong>Temporal:</strong> Month, weekend/weekday, proximity to special days</li>
+      <li><strong>Technical:</strong> Browser, OS, region, traffic type</li>
+    </ul>
+
+    <h3 class="section-subheading">2. Handling class imbalance</h3>
+    <p>The dataset had a severe imbalance (85% non-buyers). I used <strong>SMOTE</strong> (Synthetic Minority Oversampling) to generate synthetic buyer examples, balancing the training set without losing real patterns.</p>
+
+    <h3 class="section-subheading">3. Model selection</h3>
+    <p>Tested multiple algorithms: Logistic Regression (baseline), Decision Tree, Random Forest (final choice), Gradient Boosting.</p>
+    <p>Random Forest performed best, achieving <strong>87% accuracy</strong> and <strong>78% recall</strong> on buyers.</p>
+  </div>
+
+  <div class="tech-stack reveal">
+    <span class="tech-tag">R</span>
+    <span class="tech-tag">caret</span>
+    <span class="tech-tag">randomForest</span>
+    <span class="tech-tag">SMOTE</span>
+    <span class="tech-tag">ggplot2</span>
+  </div>
+</section>
+
+<section class="content-section">
+  <h2 class="section-heading reveal">Key findings</h2>
+
+  <!--
+    📷 ADD IMAGES HERE
+    Replace the <div class="visual-placeholder"> blocks with <img> tags:
+    <img src="../images/project1/feature-importance.png" alt="Feature importance chart">
+    Save your images in /images/project1/ in your repo.
+  -->
+  <div class="visual-grid reveal">
+    <div class="visual-item visual-half">
+      <div class="visual-placeholder">Image — feature importance chart</div>
+      <div class="visual-caption">Feature importance: ProductRelated_Duration and PageValues were the strongest predictors.</div>
+    </div>
+    <div class="visual-item visual-half">
+      <div class="visual-placeholder">Image — ROC curve</div>
+      <div class="visual-caption">ROC curve. AUC = 0.91, indicating excellent discrimination between buyers and non-buyers.</div>
+    </div>
+  </div>
+
+  <div class="content-text reveal">
+    <p>The model revealed that <strong>time spent on product pages</strong> was the single strongest predictor of purchase — more important than traffic source, device type, or even number of pages viewed.</p>
+  </div>
+</section>
+
+<section class="content-section dark">
+  <h2 class="section-heading reveal">Business impact</h2>
+  <div class="impact-callout reveal">
+    <h3 class="impact-callout-title">Projected revenue uplift: +€11,700 per period</h3>
+    <p class="impact-callout-text">By targeting high-intent users identified by the model with a 10% discount offer, we projected a conversion lift of 2.5 percentage points (from 11% to 13.5%). At an average order value of €95, this represents significant incremental revenue with minimal acquisition cost.</p>
+  </div>
+
+  <div class="content-text reveal">
+    <p><strong>Recommendations delivered to stakeholders:</strong></p>
+    <ul>
+      <li><strong>Real-time scoring:</strong> Integrate model into website backend to score visitors during session</li>
+      <li><strong>Tiered interventions:</strong> Show different offers based on intent score (high/medium/low)</li>
+      <li><strong>A/B testing framework:</strong> Measure actual lift vs. control group before full rollout</li>
+    </ul>
+    <p>The project demonstrated that machine learning could move from post-hoc analysis to real-time business decision-making — a shift the marketing team hadn't considered before.</p>
+  </div>
+</section>
+
+<section class="content-section">
+  <h2 class="section-heading reveal">What I learned</h2>
+  <div class="content-text reveal">
+    <p><strong>Class imbalance is the norm, not the exception.</strong> Real business problems rarely have balanced datasets. Learning to use SMOTE, weighted loss functions, and recall-focused metrics was critical.</p>
+    <p><strong>Model accuracy isn't the goal — business value is.</strong> A model with 85% accuracy that catches only 50% of buyers is useless. Optimising for recall (catching actual buyers) was more important than overall accuracy.</p>
+    <p><strong>Feature engineering &gt; algorithm choice.</strong> Random Forest only outperformed simpler models after I engineered interaction features (e.g., PageValues × ProductRelated_Duration).</p>
+  </div>
+</section>
+
+<div class="next-project reveal">
+  <div>
+    <div class="next-project-label">Next project</div>
+    <a href="project-2.html" class="next-project-title">Measuring what ads actually cause →</a>
+  </div>
+  <a href="../index.html#work" class="project-btn">All projects</a>
+</div>
+
+<footer>
+  <p>© 2026 Marta Blanco Arévalo</p>
+  <div class="footer-links">
+    <a href="mailto:martablarev@gmail.com">martablarev@gmail.com</a>
+    <a href="https://linkedin.com/in/marta-blanco-arev" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/marta-ba" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>

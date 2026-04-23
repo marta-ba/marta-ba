@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Causal A/B Testing for Ads — Marta Blanco Arévalo</title>
+<meta name="description" content="A/B test framework separating genuine ad lift from background conversion noise using statistical significance testing and causal inference.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;500;700&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav>
+  <a href="../index.html" class="nav-logo">MB</a>
+  <a href="../index.html#work" class="nav-back">← Back to work</a>
+</nav>
+
+<section class="project-hero">
+  <div class="project-meta reveal">
+    <span class="project-category cat-behavioural">Behavioural Analytics</span>
+    <span class="project-date">2024</span>
+  </div>
+  <h1 class="project-title reveal">Measuring what ads actually cause — not just correlate</h1>
+  <p class="project-lede reveal">
+    An A/B test framework designed to separate genuine ad-driven lift from background conversion noise.
+    Built around a causal inference mindset, not just dashboard metrics.
+  </p>
+
+  <div class="project-stats reveal">
+    <div class="stat-box"><div class="stat-value">2</div><div class="stat-label">Business questions answered</div></div>
+    <div class="stat-box"><div class="stat-value">95%</div><div class="stat-label">Confidence threshold</div></div>
+    <div class="stat-box"><div class="stat-value">+18%</div><div class="stat-label">Measured ad lift</div></div>
+  </div>
+
+  <div class="project-links reveal">
+    <a href="https://github.com/marta-ba" target="_blank" rel="noopener" class="project-btn primary">View code →</a>
+  </div>
+</section>
+
+<section class="content-section">
+  <h2 class="section-heading reveal">The problem</h2>
+  <div class="content-text reveal">
+    <p>The marketing team was reporting "ad campaigns increased conversions by 25%" — but conversions had been growing organically anyway. <strong>How much lift was actually caused by the ads?</strong></p>
+    <p>The team needed a clean, defensible methodology to separate signal from noise — one that wouldn't be dismissed by finance or product leadership.</p>
+  </div>
+</section>
+
+<section class="content-section dark">
+  <h2 class="section-heading reveal">Methodology</h2>
+  <div class="content-text reveal">
+    <h3 class="section-subheading">1. Designing the test</h3>
+    <ul>
+      <li>Defined treatment and control groups with proper randomisation</li>
+      <li>Set sample size based on minimum detectable effect (MDE)</li>
+      <li>Pre-registered hypotheses to avoid p-hacking</li>
+    </ul>
+    <h3 class="section-subheading">2. Statistical testing</h3>
+    <p>Two-sample t-tests for continuous metrics, chi-square for categorical. Validated assumptions (normality, equal variance) before drawing conclusions.</p>
+    <h3 class="section-subheading">3. Causal framing</h3>
+    <p>Framed every conclusion in terms of <strong>counterfactuals</strong>: "What would have happened without the ad?" — not "what correlates with the ad?"</p>
+  </div>
+  <div class="tech-stack reveal">
+    <span class="tech-tag">Python</span>
+    <span class="tech-tag">scipy</span>
+    <span class="tech-tag">statsmodels</span>
+    <span class="tech-tag">Hypothesis Testing</span>
+  </div>
+</section>
+
+<section class="content-section">
+  <h2 class="section-heading reveal">Visual results</h2>
+  <div class="visual-grid reveal">
+    <div class="visual-item visual-full">
+      <div class="visual-placeholder">Image — distribution of conversion rates: control vs treatment</div>
+      <div class="visual-caption">Distribution overlap test confirming the lift was statistically significant (p &lt; 0.01).</div>
+    </div>
+  </div>
+</section>
+
+<section class="content-section dark">
+  <h2 class="section-heading reveal">Business impact</h2>
+  <div class="impact-callout reveal">
+    <h3 class="impact-callout-title">Reframed how the team measured marketing ROI</h3>
+    <p class="impact-callout-text">The framework became the default standard for evaluating new campaigns. Two campaigns that had been celebrated as "successes" turned out to have zero statistically significant lift — saving budget that was reallocated to channels with measurable impact.</p>
+  </div>
+</section>
+
+<div class="next-project reveal">
+  <div>
+    <div class="next-project-label">Next project</div>
+    <a href="project-3.html" class="next-project-title">Who are your real customers? →</a>
+  </div>
+  <a href="../index.html#work" class="project-btn">All projects</a>
+</div>
+
+<footer>
+  <p>© 2026 Marta Blanco Arévalo</p>
+  <div class="footer-links">
+    <a href="mailto:martablarev@gmail.com">martablarev@gmail.com</a>
+    <a href="https://linkedin.com/in/marta-blanco-arev" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/marta-ba" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>

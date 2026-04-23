@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brazil Public Revenue Analysis — Marta Blanco Arévalo</title>
+<meta name="description" content="Analysis of forecast vs actual revenue collection across Brazilian public institutions (2013–2021). Identifies systemic underperformers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;500;700&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav>
+  <a href="../index.html" class="nav-logo">MB</a>
+  <a href="../index.html#work" class="nav-back">← Back to work</a>
+</nav>
+
+<section class="project-hero">
+  <div class="project-meta reveal">
+    <span class="project-category cat-financial">Financial Analytics</span>
+    <span class="project-date">2023</span>
+  </div>
+  <h1 class="project-title reveal">Where did Brazil's public revenue go? 7 years of budget execution failures</h1>
+  <p class="project-lede reveal">
+    Analysis of forecast vs. actual revenue collection across Brazilian public institutions
+    (2013–2021). Identifies systemic underperformers and proposes accountability mechanisms.
+  </p>
+
+  <div class="project-stats reveal">
+    <div class="stat-box"><div class="stat-value">&lt;6%</div><div class="stat-label">Worst execution rate</div></div>
+    <div class="stat-box"><div class="stat-value">7 yrs</div><div class="stat-label">Of data analysed</div></div>
+    <div class="stat-box"><div class="stat-value">0</div><div class="stat-label">Improvement trend detected</div></div>
+    <div class="stat-box"><div class="stat-value">42</div><div class="stat-label">Agencies reviewed</div></div>
+  </div>
+
+  <div class="project-links reveal">
+    <a href="https://github.com/marta-ba" target="_blank" rel="noopener" class="project-btn primary">View code →</a>
+  </div>
+</section>
+
+<section class="content-section">
+  <h2 class="section-heading reveal">The problem</h2>
+  <div class="content-text reveal">
+    <p>Brazilian federal agencies forecast their revenue collection annually. But year after year, certain agencies <strong>massively underperformed</strong> — collecting less than 10% of forecast — with no apparent consequences.</p>
+    <p>I asked: which agencies systematically fail? Is it improving over time? And what does this tell us about budget governance?</p>
+  </div>
+</section>
+
+<section class="content-section dark">
+  <h2 class="section-heading reveal">Methodology</h2>
+  <div class="content-text reveal">
+    <ul>
+      <li>Scraped and cleaned 7 years of public budget execution data</li>
+      <li>Calculated execution rate (actual / forecast) per agency, per year</li>
+      <li>Identified persistent underperformers (low execution across multiple years)</li>
+      <li>Tested for trend: was the system improving, deteriorating, or static?</li>
+    </ul>
+  </div>
+  <div class="tech-stack reveal">
+    <span class="tech-tag">Python</span>
+    <span class="tech-tag">pandas</span>
+    <span class="tech-tag">matplotlib</span>
+    <span class="tech-tag">Public Finance</span>
+    <span class="tech-tag">EDA</span>
+  </div>
+</section>
+
+<section class="content-section">
+  <h2 class="section-heading reveal">Findings</h2>
+  <div class="visual-grid reveal">
+    <div class="visual-item visual-full">
+      <div class="visual-placeholder">Image — execution rate by agency, 2013–2021</div>
+      <div class="visual-caption">Heatmap of execution rates. Darker = worse. Several agencies stay below 10% for the full 7 years.</div>
+    </div>
+    <div class="visual-item visual-half">
+      <div class="visual-placeholder">Image — yearly trend</div>
+      <div class="visual-caption">No improvement trend detected: average execution flat across 7 years.</div>
+    </div>
+    <div class="visual-item visual-half">
+      <div class="visual-placeholder">Image — top 10 worst performers</div>
+      <div class="visual-caption">Top 10 worst-performing agencies, ranked by 7-year average execution rate.</div>
+    </div>
+  </div>
+</section>
+
+<section class="content-section dark">
+  <h2 class="section-heading reveal">Recommendations</h2>
+  <div class="impact-callout reveal">
+    <h3 class="impact-callout-title">Forecast accountability mechanisms</h3>
+    <p class="impact-callout-text">Recommended: agencies that miss forecasts by &gt;50% for 3 consecutive years should be required to submit revised, defensible projections — and face budget rebalancing if they continue to miss.</p>
+  </div>
+</section>
+
+<div class="next-project reveal">
+  <div>
+    <div class="next-project-label">Next project</div>
+    <a href="project-5.html" class="next-project-title">High sales, low profit — the wholesale paradox →</a>
+  </div>
+  <a href="../index.html#work" class="project-btn">All projects</a>
+</div>
+
+<footer>
+  <p>© 2026 Marta Blanco Arévalo</p>
+  <div class="footer-links">
+    <a href="mailto:martablarev@gmail.com">martablarev@gmail.com</a>
+    <a href="https://linkedin.com/in/marta-blanco-arev" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/marta-ba" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>
