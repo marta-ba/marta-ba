@@ -38,14 +38,16 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content
 /* HERO */
 .hero{min-height:100vh;display:grid;grid-template-rows:1fr auto;padding:7rem 3rem 3rem}
 .hero-center{display:flex;flex-direction:column;justify-content:center}
+.hero-main{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);gap:3rem;align-items:center}
+.hero-copy{max-width:620px}
 .hero-eyebrow{font-family:var(--ff-mono);font-size:0.72rem;letter-spacing:0.14em;color:var(--mid);margin-bottom:2rem;display:flex;align-items:center;gap:1rem}
 .hero-eyebrow::before{content:'';width:2.5rem;height:1px;background:var(--faint)}
 
 h1{font-family:var(--ff-display);font-size:clamp(4rem,10vw,9rem);font-weight:400;line-height:.95;letter-spacing:-.02em;margin-bottom:3rem}
 
 /* THE NAME HOVER MAGIC */
-.name-bla{color:var(--accent-b);position:relative;display:inline-block;cursor:none}
-.name-re{color:var(--accent-r);position:relative;display:inline-block;cursor:none}
+.name-bla{color:var(--accent-r);position:relative;display:inline-block;cursor:none}
+.name-re{color:var(--ink);position:relative;display:inline-block;cursor:none}
 .name-tooltip{
   position:absolute;bottom:100%;left:50%;transform:translateX(-50%) translateY(4px);
   font-family:var(--ff-mono);font-size:0.65rem;letter-spacing:0.1em;
@@ -64,6 +66,38 @@ h1{font-family:var(--ff-display);font-size:clamp(4rem,10vw,9rem);font-weight:400
 .btn-dark:hover{background:#2a2a28}
 .btn-outline{border:1px solid var(--border);color:var(--mid)}
 .btn-outline:hover{border-color:var(--ink);color:var(--ink)}
+
+.hero-stats{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:1px;
+  background:var(--border);
+}
+.stat-card{
+  background:var(--bg);
+  padding:1.5rem;
+  display:flex;
+  flex-direction:column;
+  gap:.5rem;
+}
+.stat-num{
+  font-family:var(--ff-display);
+  font-size:clamp(2rem,4vw,3.2rem);
+  line-height:1;
+  color:var(--ink);
+}
+.stat-label{
+  font-family:var(--ff-mono);
+  font-size:.68rem;
+  letter-spacing:.08em;
+  color:var(--mid);
+  text-transform:uppercase;
+}
+.stat-meta{
+  font-size:.82rem;
+  line-height:1.7;
+  color:var(--mid);
+}
 
 .hero-bottom{display:flex;justify-content:space-between;align-items:flex-end;border-top:1px solid var(--border);padding-top:1.5rem}
 .hero-location{font-family:var(--ff-mono);font-size:0.7rem;color:var(--mid);letter-spacing:.06em}
@@ -133,22 +167,11 @@ h1{font-family:var(--ff-display);font-size:clamp(4rem,10vw,9rem);font-weight:400
 .card-tags{display:flex;flex-wrap:wrap;gap:.4rem}
 .tag-pill{font-family:var(--ff-mono);font-size:.6rem;padding:.15rem .5rem;border:1px solid var(--border);color:var(--mid);border-radius:1px}
 
-/* SKILLS STRIP */
-.skills-strip{border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:3rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:2rem}
-.skill-group-label{font-family:var(--ff-mono);font-size:.65rem;letter-spacing:.1em;color:var(--mid);margin-bottom:.75rem}
-.skill-items{display:flex;flex-direction:column;gap:.4rem}
-.skill-item{font-size:.875rem;color:var(--ink)}
-
 /* ABOUT */
-.about-grid{display:grid;grid-template-columns:3fr 2fr;gap:5rem;align-items:start}
+.about-grid{display:grid;grid-template-columns:1fr;gap:5rem;align-items:start}
 .about-text{font-size:1.05rem;color:var(--mid);line-height:1.9}
 .about-text p{margin-bottom:1.5rem}
 .about-text strong{color:var(--ink)}
-.about-exp{display:flex;flex-direction:column;gap:1px;background:var(--border)}
-.exp-row{background:var(--bg);padding:1.25rem 1.5rem;display:flex;justify-content:space-between;align-items:baseline}
-.exp-co{font-size:.9rem;color:var(--ink)}
-.exp-role{font-family:var(--ff-mono);font-size:.65rem;color:var(--mid);letter-spacing:.05em}
-.exp-date{font-family:var(--ff-mono);font-size:.65rem;color:var(--faint)}
 
 /* FOOTER */
 footer{border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center}
@@ -164,12 +187,13 @@ footer p{font-family:var(--ff-mono);font-size:.68rem;color:var(--mid)}
 @media(max-width:768px){
   nav{padding:1rem 1.5rem}
   .hero{padding:6rem 1.5rem 2rem}
+  .hero-main{grid-template-columns:1fr;gap:2rem}
+  .hero-stats{grid-template-columns:1fr}
   h1{font-size:clamp(3rem,15vw,5rem)}
   .section{padding:4rem 1.5rem}
   .card-lg,.card-sm,.card-md,.card-full{grid-column:span 12}
   .about-grid{grid-template-columns:1fr}
   footer{flex-direction:column;gap:1rem;text-align:center}
-  .skills-strip{padding:2rem 1.5rem}
 }
 </style>
 </head>
@@ -190,17 +214,49 @@ footer p{font-family:var(--ff-mono);font-size:.68rem;color:var(--mid)}
 <!-- HERO -->
 <section class="hero">
   <div class="hero-center">
-    <div class="hero-eyebrow">Data Analyst · Copenhagen</div>
-    <h1>
-      Marta<br>
-      <span class="name-bla">Bla<span class="name-tooltip">Blanco</span></span><span class="name-re">re<span class="name-tooltip">Arévalo</span></span>
-    </h1>
-    <p class="hero-sub">
-      I turn data into decisions. Specialising in <strong>behavioural analytics</strong>, business intelligence, and financial data — with a growing focus on <strong>fintech and consumer insight</strong>.
-    </p>
-    <div class="hero-actions">
-      <a href="#work" class="btn btn-dark">View work</a>
-      <a href="mailto:martablarev@gmail.com" class="btn btn-outline">Get in touch</a>
+    <div class="hero-main">
+      <div class="hero-copy">
+        <div class="hero-eyebrow">Data Analyst · Copenhagen</div>
+        <h1>
+          Marta<br>
+          <span class="name-bla">Bla<span class="name-tooltip">Blanco</span></span><span class="name-re">re<span class="name-tooltip">Arévalo</span></span>
+        </h1>
+        <p class="hero-sub">
+          I turn data into decisions. Specialising in <strong>behavioural analytics</strong>, business intelligence, and financial data — with a growing focus on <strong>fintech and consumer insight</strong>.
+        </p>
+        <div class="hero-actions">
+          <a href="#work" class="btn btn-dark">View work</a>
+          <a href="mailto:martablarev@gmail.com" class="btn btn-outline">Get in touch</a>
+        </div>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat-card">
+          <div class="stat-num">3</div>
+          <div class="stat-label">Core languages</div>
+          <div class="stat-meta">SQL · Python · R</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">3</div>
+          <div class="stat-label">BI tools</div>
+          <div class="stat-meta">Power BI · Tableau · Excel</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">4</div>
+          <div class="stat-label">Methods</div>
+          <div class="stat-meta">A/B Testing · ML Classification · Clustering · ETL Pipelines</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">4</div>
+          <div class="stat-label">Domains</div>
+          <div class="stat-meta">Fintech · Market Research · Public Finance · E-commerce</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">3</div>
+          <div class="stat-label">Languages spoken</div>
+          <div class="stat-meta">Spanish · English · Danish</div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="hero-bottom">
@@ -336,52 +392,6 @@ footer p{font-family:var(--ff-mono);font-size:.68rem;color:var(--mid)}
   </div>
 </section>
 
-<!-- SKILLS -->
-<div class="skills-strip reveal">
-  <div>
-    <div class="skill-group-label">Languages</div>
-    <div class="skill-items">
-      <span class="skill-item">SQL</span>
-      <span class="skill-item">Python</span>
-      <span class="skill-item">R</span>
-    </div>
-  </div>
-  <div>
-    <div class="skill-group-label">Analytics & BI</div>
-    <div class="skill-items">
-      <span class="skill-item">Power BI</span>
-      <span class="skill-item">Tableau</span>
-      <span class="skill-item">Excel (advanced)</span>
-    </div>
-  </div>
-  <div>
-    <div class="skill-group-label">Methods</div>
-    <div class="skill-items">
-      <span class="skill-item">A/B Testing</span>
-      <span class="skill-item">ML Classification</span>
-      <span class="skill-item">Clustering</span>
-      <span class="skill-item">ETL Pipelines</span>
-    </div>
-  </div>
-  <div>
-    <div class="skill-group-label">Domains</div>
-    <div class="skill-items">
-      <span class="skill-item">Fintech</span>
-      <span class="skill-item">Market Research</span>
-      <span class="skill-item">Public Finance</span>
-      <span class="skill-item">E-commerce</span>
-    </div>
-  </div>
-  <div>
-    <div class="skill-group-label">Languages spoken</div>
-    <div class="skill-items">
-      <span class="skill-item">Spanish — native</span>
-      <span class="skill-item">English — B2</span>
-      <span class="skill-item">Danish — learning</span>
-    </div>
-  </div>
-</div>
-
 <!-- ABOUT -->
 <section class="section" id="about">
   <div class="section-label reveal">About</div>
@@ -391,38 +401,6 @@ footer p{font-family:var(--ff-mono);font-size:.68rem;color:var(--mid)}
       <p>I've worked across retail, construction, market research, and product analytics — always in roles where the data was messy and the problem hadn't been properly defined yet. That's the work I find most interesting.</p>
       <p>Right now I'm focused on <strong>fintech and consumer insight</strong> — how digital financial products can be made more transparent, how behavioural data can drive better product decisions, and how market research methods can be modernised with ML.</p>
       <p>I'm open to remote-first roles in data analytics, BI, and consumer research. I work in English and am actively learning Danish.</p>
-    </div>
-    <div>
-      <div class="about-exp">
-        <div class="exp-row">
-          <div>
-            <div class="exp-co">LOCA Gruppen</div>
-            <div class="exp-role">BI Analyst & IT Assistant</div>
-          </div>
-          <span class="exp-date">2025–present</span>
-        </div>
-        <div class="exp-row">
-          <div>
-            <div class="exp-co">ERLEtek</div>
-            <div class="exp-role">Market Research & Product Analyst</div>
-          </div>
-          <span class="exp-date">2025</span>
-        </div>
-        <div class="exp-row">
-          <div>
-            <div class="exp-co">Kjær Bad & VVS</div>
-            <div class="exp-role">Analytics Developer</div>
-          </div>
-          <span class="exp-date">2025</span>
-        </div>
-        <div class="exp-row">
-          <div>
-            <div class="exp-co">Triumph Motorcycle</div>
-            <div class="exp-role">BI Analyst</div>
-          </div>
-          <span class="exp-date">2024–2025</span>
-        </div>
-      </div>
     </div>
   </div>
 </section>
