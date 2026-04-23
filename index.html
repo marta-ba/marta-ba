@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marta Blanco — Data Analyst</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0d0f0e;
+    --surface: #141714;
+    --border: #1f231f;
+    --accent: #b8f55a;
+    --accent-dim: #7aaa2e;
+    --text: #e8ebe5;
+    --text-mid: #8a9186;
+    --text-dim: #4a4f47;
+    --font-display: 'DM Serif Display', Georgia, serif;
+    --font-body: 'Instrument Sans', sans-serif;
+    --font-mono: 'DM Mono', monospace;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* NOISE TEXTURE OVERLAY */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.4;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 3rem;
+    background: rgba(13,15,14,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--accent);
+    letter-spacing: 0.08em;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-mid);
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--accent); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    padding: 8rem 3rem 5rem;
+    position: relative;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    width: 100%;
+    max-width: 1200px;
+  }
+
+  .hero-label {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--accent);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .hero-label::before {
+    content: '';
+    display: block;
+    width: 2rem;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-size: clamp(3.5rem, 7vw, 6rem);
+    font-weight: 400;
+    line-height: 1.0;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .hero-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 0.5rem;
+  }
+
+  .hero-desc {
+    font-size: 1.05rem;
+    color: var(--text-mid);
+    line-height: 1.75;
+    max-width: 420px;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .tag {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    padding: 0.3rem 0.75rem;
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+    letter-spacing: 0.06em;
+    border-radius: 2px;
+  }
+
+  .cta-row {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .btn-primary {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    padding: 0.75rem 1.75rem;
+    background: var(--accent);
+    color: #0d0f0e;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 2px;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .btn-primary:hover { background: #ceff7a; transform: translateY(-1px); }
+
+  .btn-ghost {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    padding: 0.75rem 1.75rem;
+    border: 1px solid var(--border);
+    color: var(--text-mid);
+    text-decoration: none;
+    border-radius: 2px;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* SCROLL INDICATOR */
+  .scroll-hint {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0.3;
+    animation: float 2.5s ease-in-out infinite;
+  }
+
+  .scroll-hint span {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    color: var(--text-mid);
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--text-mid), transparent);
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(6px); }
+  }
+
+  /* SECTIONS */
+  section {
+    padding: 6rem 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .section-num {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    letter-spacing: 0.08em;
+  }
+
+  h2 {
+    font-family: var(--font-display);
+    font-size: 2.4rem;
+    font-weight: 400;
+    color: var(--text);
+  }
+
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* PROJECTS GRID */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 1.5px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .project-card {
+    background: var(--surface);
+    padding: 2.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: background 0.2s;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .project-card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px;
+    height: 0;
+    background: var(--accent);
+    transition: height 0.3s ease;
+  }
+
+  .project-card:hover { background: #191c18; }
+  .project-card:hover::after { height: 100%; }
+
+  .project-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .project-type {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--accent-dim);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .project-lang {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--text-dim);
+    letter-spacing: 0.06em;
+  }
+
+  .project-title {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    font-weight: 400;
+    color: var(--text);
+    line-height: 1.25;
+  }
+
+  .project-desc {
+    font-size: 0.875rem;
+    color: var(--text-mid);
+    line-height: 1.65;
+    flex: 1;
+  }
+
+  .project-impact {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--accent);
+    letter-spacing: 0.04em;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .project-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .stack-pill {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    padding: 0.2rem 0.6rem;
+    background: rgba(184,245,90,0.07);
+    color: var(--accent-dim);
+    border-radius: 2px;
+  }
+
+  /* FEATURED project (spans 2 cols) */
+  .project-card.featured {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .featured-left { display: flex; flex-direction: column; gap: 1rem; }
+  .featured-right { display: flex; flex-direction: column; justify-content: flex-end; gap: 1rem; }
+
+  /* SKILLS */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .skill-block {
+    background: var(--surface);
+    padding: 1.75rem;
+  }
+
+  .skill-category {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .skill-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .skill-list li {
+    font-size: 0.875rem;
+    color: var(--text-mid);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .skill-list li::before {
+    content: '—';
+    color: var(--text-dim);
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+  }
+
+  /* ABOUT */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .about-text p {
+    color: var(--text-mid);
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+  }
+
+  .about-text p strong {
+    color: var(--text);
+    font-weight: 500;
+  }
+
+  .about-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .stat-row {
+    background: var(--surface);
+    padding: 1.5rem 1.75rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .stat-label {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    letter-spacing: 0.06em;
+  }
+
+  .stat-value {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--accent);
+  }
+
+  /* CONTACT */
+  .contact-inner {
+    border: 1px solid var(--border);
+    padding: 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    background: var(--surface);
+  }
+
+  .contact-heading {
+    font-family: var(--font-display);
+    font-size: 2.8rem;
+    font-weight: 400;
+    line-height: 1.1;
+  }
+
+  .contact-heading em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .contact-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.25rem;
+    border: 1px solid var(--border);
+    text-decoration: none;
+    color: var(--text-mid);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.04em;
+    transition: border-color 0.2s, color 0.2s;
+    border-radius: 2px;
+  }
+
+  .contact-link:hover { border-color: var(--accent); color: var(--accent); }
+  .contact-link span { color: var(--text-dim); font-size: 0.7rem; }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 2rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  footer p {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    letter-spacing: 0.06em;
+  }
+
+  footer a {
+    color: var(--accent-dim);
+    text-decoration: none;
+  }
+
+  /* DIVIDER LINE */
+  .full-divider {
+    width: 100%;
+    height: 1px;
+    background: var(--border);
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ENTRANCE ANIMATIONS */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .hero { padding: 7rem 1.5rem 4rem; }
+    .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    section { padding: 4rem 1.5rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .contact-inner { grid-template-columns: 1fr; padding: 2rem; gap: 2rem; }
+    .project-card.featured { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 0.75rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">MB — portfolio</a>
+  <ul class="nav-links">
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-grid">
+    <div class="hero-left">
+      <div class="hero-label">Data Analyst · Copenhagen</div>
+      <h1>Marta<br><em>Blanco</em></h1>
+    </div>
+    <div class="hero-right">
+      <p class="hero-desc">
+        I turn messy data into decisions. Specialising in business intelligence, analytics engineering, and data-driven strategy — with a growing focus on <strong style="color:var(--text)">fintech and digital finance</strong>.
+      </p>
+      <div class="hero-tags">
+        <span class="tag">SQL</span>
+        <span class="tag">Python</span>
+        <span class="tag">Power BI</span>
+        <span class="tag">ETL</span>
+        <span class="tag">Machine Learning</span>
+        <span class="tag">Data Storytelling</span>
+      </div>
+      <div class="cta-row">
+        <a href="#projects" class="btn-primary">View projects</a>
+        <a href="mailto:martablanco@gmail.com" class="btn-ghost">Get in touch</a>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <span>scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</div>
+
+<div class="full-divider"></div>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-header fade-up">
+    <span class="section-num">01</span>
+    <h2>Selected work</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="projects-grid">
+
+    <!-- FEATURED -->
+    <a href="https://github.com/marta-ba/synthetic-data-analytics" target="_blank" class="project-card featured fade-up">
+      <div class="featured-left">
+        <div class="project-meta">
+          <span class="project-type">Featured · Analytics Engineering</span>
+          <span class="project-lang">Python · Power BI</span>
+        </div>
+        <div class="project-title">End-to-End Synthetic Business Analytics</div>
+        <p class="project-desc">
+          Complete data analytics workflow built from scratch: synthetic data generation, cleaning and profiling with Pandas and ydata-profiling, through to visual reporting in Power BI. Demonstrates a full production-style pipeline without relying on pre-cleaned datasets.
+        </p>
+      </div>
+      <div class="featured-right">
+        <div class="project-stack">
+          <span class="stack-pill">pandas</span>
+          <span class="stack-pill">ydata-profiling</span>
+          <span class="stack-pill">Power BI</span>
+          <span class="stack-pill">data generation</span>
+          <span class="stack-pill">EDA</span>
+        </div>
+        <div class="project-impact">→ Replicates a real business data pipeline end-to-end</div>
+      </div>
+    </a>
+
+    <!-- PROJECT 2 -->
+    <a href="https://github.com/marta-ba/marketing_campaing_abtesting" target="_blank" class="project-card fade-up">
+      <div class="project-meta">
+        <span class="project-type">Experimentation</span>
+        <span class="project-lang">Python</span>
+      </div>
+      <div class="project-title">Marketing Campaign A/B Testing</div>
+      <p class="project-desc">
+        Statistical analysis of marketing campaign performance using A/B testing methodology. Includes hypothesis testing, significance analysis, and actionable recommendations for campaign optimisation.
+      </p>
+      <div class="project-stack">
+        <span class="stack-pill">scipy</span>
+        <span class="stack-pill">pandas</span>
+        <span class="stack-pill">matplotlib</span>
+        <span class="stack-pill">statistics</span>
+      </div>
+      <div class="project-impact">→ Identifies which campaign variant drives real conversion lift</div>
+    </a>
+
+    <!-- PROJECT 3 -->
+    <a href="https://github.com/marta-ba/online_shopper_behavior" target="_blank" class="project-card fade-up">
+      <div class="project-meta">
+        <span class="project-type">Behavioural Analytics</span>
+        <span class="project-lang">R</span>
+      </div>
+      <div class="project-title">Online Shopper Behaviour Analysis</div>
+      <p class="project-desc">
+        Analysis of 12,330 e-commerce sessions to identify patterns in purchase intent, page visit duration, and conversion drivers. Built in R with statistical modelling to segment user behaviour.
+      </p>
+      <div class="project-stack">
+        <span class="stack-pill">R</span>
+        <span class="stack-pill">ggplot2</span>
+        <span class="stack-pill">segmentation</span>
+        <span class="stack-pill">logistic regression</span>
+      </div>
+      <div class="project-impact">→ Reveals which sessions are most likely to convert and why</div>
+    </a>
+
+    <!-- PROJECT 4 -->
+    <a href="https://github.com/marta-ba/ETL_IBIShotels" target="_blank" class="project-card fade-up">
+      <div class="project-meta">
+        <span class="project-type">Data Engineering · ETL</span>
+        <span class="project-lang">Python</span>
+      </div>
+      <div class="project-title">Hotel Reservation ETL Pipeline</div>
+      <p class="project-desc">
+        Extracts, transforms, and loads hotel reservation data, followed by exploratory data analysis to surface operational insights. Covers data cleaning, transformation logic, and structured output for reporting.
+      </p>
+      <div class="project-stack">
+        <span class="stack-pill">pandas</span>
+        <span class="stack-pill">ETL</span>
+        <span class="stack-pill">data cleaning</span>
+        <span class="stack-pill">EDA</span>
+      </div>
+      <div class="project-impact">→ Structured pipeline replacing manual reservation reporting</div>
+    </a>
+
+    <!-- PROJECT 5 -->
+    <a href="https://github.com/marta-ba/customer_segmentation" target="_blank" class="project-card fade-up">
+      <div class="project-meta">
+        <span class="project-type">Machine Learning</span>
+        <span class="project-lang">Python</span>
+      </div>
+      <div class="project-title">Customer Segmentation Model</div>
+      <p class="project-desc">
+        Unsupervised learning project applying clustering techniques to segment customers by behaviour and value. Output drives targeted strategies for retention, upsell, and personalisation.
+      </p>
+      <div class="project-stack">
+        <span class="stack-pill">scikit-learn</span>
+        <span class="stack-pill">k-means</span>
+        <span class="stack-pill">clustering</span>
+        <span class="stack-pill">seaborn</span>
+      </div>
+      <div class="project-impact">→ Actionable customer groups for marketing and retention strategy</div>
+    </a>
+
+    <!-- PROJECT 6 -->
+    <a href="https://github.com/marta-ba/webscraping" target="_blank" class="project-card fade-up">
+      <div class="project-meta">
+        <span class="project-type">Data Collection</span>
+        <span class="project-lang">Python</span>
+      </div>
+      <div class="project-title">Automated Web Scraping & API Ingestion</div>
+      <p class="project-desc">
+        Collection of scripts for automated data extraction: web scraping with BeautifulSoup and Selenium, REST API consumption, and structured data output for downstream analysis.
+      </p>
+      <div class="project-stack">
+        <span class="stack-pill">BeautifulSoup</span>
+        <span class="stack-pill">Selenium</span>
+        <span class="stack-pill">REST APIs</span>
+        <span class="stack-pill">automation</span>
+      </div>
+      <div class="project-impact">→ Automated pipelines replacing hours of manual data gathering</div>
+    </a>
+
+  </div>
+</section>
+
+<div class="full-divider"></div>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-header fade-up">
+    <span class="section-num">02</span>
+    <h2>Toolkit</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="skills-grid fade-up">
+    <div class="skill-block">
+      <div class="skill-category">Languages</div>
+      <ul class="skill-list">
+        <li>SQL</li>
+        <li>Python</li>
+        <li>R</li>
+        <li>HTML / CSS</li>
+      </ul>
+    </div>
+    <div class="skill-block">
+      <div class="skill-category">Analytics & BI</div>
+      <ul class="skill-list">
+        <li>Power BI</li>
+        <li>Tableau</li>
+        <li>Excel (advanced)</li>
+        <li>KPI design</li>
+      </ul>
+    </div>
+    <div class="skill-block">
+      <div class="skill-category">Data Engineering</div>
+      <ul class="skill-list">
+        <li>ETL pipelines</li>
+        <li>API ingestion</li>
+        <li>Data modelling</li>
+        <li>Pipeline automation</li>
+      </ul>
+    </div>
+    <div class="skill-block">
+      <div class="skill-category">Data Science</div>
+      <ul class="skill-list">
+        <li>Machine learning</li>
+        <li>A/B testing</li>
+        <li>Clustering</li>
+        <li>Predictive modelling</li>
+      </ul>
+    </div>
+    <div class="skill-block">
+      <div class="skill-category">Data Quality</div>
+      <ul class="skill-list">
+        <li>Validation frameworks</li>
+        <li>Data documentation</li>
+        <li>Source of truth design</li>
+        <li>Governance processes</li>
+      </ul>
+    </div>
+    <div class="skill-block">
+      <div class="skill-category">Languages spoken</div>
+      <ul class="skill-list">
+        <li>Spanish (native)</li>
+        <li>English (B2, improving)</li>
+        <li>Danish (learning)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="full-divider"></div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-header fade-up">
+    <span class="section-num">03</span>
+    <h2>About</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="about-grid">
+    <div class="about-text fade-up">
+      <p>
+        I'm a data analyst based in <strong>Copenhagen</strong>, originally from Spain. My background sits at the intersection of social science and data engineering — a combination that makes me good at asking the right questions, not just running the right models.
+      </p>
+      <p>
+        I've built BI systems from scratch for companies across retail, construction, and market research — replacing spreadsheet chaos with structured, automated reporting. I'm drawn to contexts where data is still messy and decisions still need defending.
+      </p>
+      <p>
+        Right now I'm particularly interested in <strong>fintech and digital finance</strong> — how neobanks use behavioural data, how crypto markets can be modelled, and how financial products can be made more transparent through better analytics.
+      </p>
+      <p>
+        I'm open to remote-first roles in data analytics, business intelligence, and market research — ideally where the work is ambiguous enough to need real thinking.
+      </p>
+    </div>
+    <div class="fade-up">
+      <div class="about-stats">
+        <div class="stat-row">
+          <span class="stat-label">Years in data</span>
+          <span class="stat-value">3+</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Hours saved through automation</span>
+          <span class="stat-value">20/wk</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Industries worked in</span>
+          <span class="stat-value">5</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Based in</span>
+          <span class="stat-value" style="font-size:1.1rem;font-family:var(--font-mono)">CPH 🇩🇰</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Open to</span>
+          <span class="stat-value" style="font-size:0.85rem;font-family:var(--font-mono);color:var(--accent)">Remote · Hybrid</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="full-divider"></div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-header fade-up">
+    <span class="section-num">04</span>
+    <h2>Let's talk</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="contact-inner fade-up">
+    <div class="contact-heading">
+      Open to <em>interesting</em> work
+    </div>
+    <div class="contact-links">
+      <a href="mailto:martablanco@gmail.com" class="contact-link">
+        martablanco@gmail.com
+        <span>email ↗</span>
+      </a>
+      <a href="https://www.linkedin.com/in/marta-blanco" target="_blank" class="contact-link">
+        linkedin.com/in/marta-blanco
+        <span>LinkedIn ↗</span>
+      </a>
+      <a href="https://github.com/marta-ba" target="_blank" class="contact-link">
+        github.com/marta-ba
+        <span>GitHub ↗</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Marta Blanco — built with intention, not a template</p>
+  <p>Copenhagen · <a href="https://github.com/marta-ba">github.com/marta-ba</a></p>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
