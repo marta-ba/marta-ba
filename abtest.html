@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ad Effectiveness A/B Test — Marta Blare</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;500;700&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="project.css">
+<style>.cat-colour{color:#1a4fd6;border-color:#1a4fd6}.big-num-value{color:#1a4fd6}</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div><div class="cursor-ring" id="cursorRing"></div>
+<nav><a href="../index.html" class="nav-logo">MB</a><a href="../index.html" class="nav-back">← All projects</a></nav>
+
+<div class="project-hero">
+  <div class="project-meta-row">
+    <span class="project-category cat-colour">Behavioural Analytics</span>
+    <span class="project-num">Project 02</span>
+    <span class="project-stack-tag">Python · Hypothesis Testing · Causal Inference · scipy</span>
+  </div>
+  <h1 class="project-title">Measuring what ads actually cause — not just what they correlate with</h1>
+  <p class="project-summary">Most marketing reporting tells you what happened. This project tells you what the ads actually caused. Using a structured A/B testing framework, it separates genuine ad lift from background conversion noise — and quantifies how much of the result the campaign can actually claim credit for.</p>
+  <a href="https://github.com/marta-ba/measuring-advertising-effectiveness-ab-test" target="_blank" class="gh-link">View on GitHub ↗</a>
+</div>
+
+<div class="big-numbers">
+  <div class="big-num-cell"><div class="big-num-value">2</div><div class="big-num-label">Core business questions answered with statistical evidence</div></div>
+  <div class="big-num-cell"><div class="big-num-value">95%</div><div class="big-num-label">Confidence threshold for decision-making</div></div>
+  <div class="big-num-cell"><div class="big-num-value">Ad vs PSA</div><div class="big-num-label">Causal comparison — not just before/after</div></div>
+  <div class="big-num-cell"><div class="big-num-value">0</div><div class="big-num-label">Assumptions made without statistical validation</div></div>
+</div>
+
+<div class="project-content">
+  <div class="content-grid">
+    <div>
+      <h2 class="section-h">The business problem</h2>
+      <p class="body-p">A company ran a digital advertising campaign and wants to know two things: <strong>Did it work?</strong> And if it did, <strong>how much of the result was actually caused by the ads</strong> — and how much would have happened anyway?</p>
+      <p class="body-p">This is the question most marketing dashboards fail to answer. Correlation between ad exposure and conversion is easy to find. Causation is harder — and far more valuable.</p>
+
+      <h2 class="section-h" style="margin-top:2.5rem">What the analysis found</h2>
+      <ul class="insight-list">
+        <li>The A/B framework compared users exposed to ads vs. users shown a neutral public service announcement — isolating the causal effect of advertising from background conversion behaviour.</li>
+        <li>High ad exposure did not always correlate with higher conversion — diminishing returns were identified above a certain frequency threshold.</li>
+        <li>Temporal patterns revealed specific time windows where ad delivery was significantly more effective, suggesting budget could be concentrated rather than spread evenly.</li>
+        <li>Outlier users with extreme ad exposure were segmented separately — their behaviour would have distorted aggregate results if left in.</li>
+      </ul>
+
+      <div class="recommendation-box">
+        <h3>What I would recommend to the business</h3>
+        <p><strong>Scale the campaign only if statistical significance AND positive lift are confirmed simultaneously.</strong> A result that is statistically significant but economically trivial doesn't justify budget. A result that looks large but doesn't pass the significance threshold is noise.</p>
+        <p style="margin-top:.75rem"><strong>Cap ad frequency</strong> at the point where diminishing returns begin — reinvest that budget in high-performing time windows identified in the temporal analysis. This alone could improve ROAS without increasing total spend.</p>
+      </div>
+    </div>
+    <div>
+      <div class="sidebar-block"><div class="sidebar-label">Why causal inference matters</div><div class="sidebar-val">A user who converts after seeing 10 ads might have converted anyway. The control group (PSA) isolates the counterfactual: what would have happened without the campaign?</div></div>
+      <div class="sidebar-block"><div class="sidebar-label">Key metrics</div><div class="sidebar-val">Conversion rate by group · Ad exposure distribution · Temporal conversion patterns · Statistical significance (p-value, confidence interval)</div></div>
+      <div class="sidebar-block"><div class="sidebar-label">Dataset</div><div class="sidebar-val">User-level observations with group assignment (ad vs PSA), conversion outcome, total ads seen, and time-of-exposure metadata.</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="project-footer">
+  <a href="shopper.html">← Previous project</a>
+  <a href="segmentation.html">Next project →</a>
+</div>
+<script>const cursor=document.getElementById('cursor'),ring=document.getElementById('cursorRing');document.addEventListener('mousemove',e=>{cursor.style.left=e.clientX+'px';cursor.style.top=e.clientY+'px';ring.style.left=e.clientX+'px';ring.style.top=e.clientY+'px'});</script>
+</body></html>
