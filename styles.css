@@ -54,7 +54,7 @@ nav.scrolled{border-bottom-color:var(--border)}
 .hero-eyebrow{font-family:var(--ff-mono);font-size:.72rem;letter-spacing:.14em;color:var(--mid);margin-bottom:2rem;display:flex;align-items:center;gap:1rem}
 .hero-eyebrow::before{content:'';width:2.5rem;height:1px;background:var(--faint)}
 
-h1{font-family:var(--ff-display);font-size:clamp(4rem,10vw,9rem);font-weight:400;line-height:.95;letter-spacing:-.02em;margin-bottom:3rem}
+h1{font-family:var(--ff-display);font-size:clamp(4rem,10vw,9rem);font-weight:300;line-height:.95;letter-spacing:-.02em;margin-bottom:3rem}
 
 .name-bla,.name-re{position:relative;display:inline-block;cursor:none}
 .name-bla{color:var(--accent-r)}
