@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Travel Demand Monitor — Marta Blanco Arévalo</title>
+<meta name="description" content="Combining Eurostat tourism data with Google Trends flight searches to spot rising European destinations before official statistics confirm them.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;500;700&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav>
+  <a href="../index.html" class="nav-back">← Back to portfolio</a>
+  <ul class="nav-links">
+    <li><a href="../index.html#work">Work</a></li>
+    <li><a href="../index.html#toolkit">Toolkit</a></li>
+    <li><a href="../index.html#about">About</a></li>
+    <li><a href="mailto:martablarev@gmail.com">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="project-hero">
+  <div class="project-meta">
+    <span class="project-category cat-bi">Business Intelligence</span>
+    <span class="project-date">2026 · Editorial Data</span>
+  </div>
+  <h1 class="project-title">Which European destinations are gaining momentum in 2026?</h1>
+  <p class="project-lede">A reproducible pipeline that fuses Eurostat accommodation statistics with Google Trends flight-search signals to surface destinations rising <em>before</em> the official numbers catch up — built for travel media and PR teams who need data-driven destination stories.</p>
+
+  <div class="project-stats">
+    <div class="stat-box">
+      <div class="stat-value">7</div>
+      <div class="impact-label">Countries ranked</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-value">+17%</div>
+      <div class="impact-label">Italy YoY tourism</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-value">2 mo</div>
+      <div class="impact-label">Search-to-tourism lag</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-value">4</div>
+      <div class="impact-label">Datawrapper-ready CSVs</div>
+    </div>
+  </div>
+
+  <div class="project-links">
+    <a href="https://github.com/marta-ba/travel-demand-monitor" target="_blank" rel="noopener" class="project-btn primary">View on GitHub ↗</a>
+  </div>
+</section>
+
+<section class="content-section">
+  <h2 class="section-heading">The question</h2>
+  <div class="content-text">
+    <p>Travel search data is rich, timely, and underused for storytelling. Official tourism statistics lag reality by weeks. The core question this project answers:</p>
+    <p><strong>Which destinations are seeing search interest surge before it shows up in official accommodation statistics — and which are seeing confirmed growth across both datasets simultaneously?</strong></p>
+  </div>
+</section>
+
+<section class="content-section dark">
+  <h2 class="section-heading">Key findings — February 2026</h2>
+  <div class="content-text">
+    <ul>
+      <li><strong>🇮🇹 Italy</strong> — the strongest <em>confirmed</em> tourism growth in the dataset (+17.0% YoY).</li>
+      <li><strong>🇦🇹 Austria</strong> — the quiet overperformer (+6.5% YoY, +700% search lag).</li>
+      <li><strong>🇫🇷 France</strong> — most interesting forward-looking story: search peaked at maximum index in Sept 2025, yet tourism growth remains moderate.</li>
+      <li><strong>🇵🇱 Poland</strong> — top of the momentum ranking thanks to a low search base producing dramatic relative growth.</li>
+    </ul>
+  </div>
+
+  <div class="impact-callout">
+    <div class="impact-callout-title">Travel Momentum Score</div>
+    <div class="impact-callout-text">
+      <code>Score = 0.6 × tourism_yoy_pct + 0.4 × search_yoy_pct_lag2m</code><br><br>
+      A weighted composite blending confirmed tourism growth (60%) with forward-looking search momentum from 2 months prior (40%). An exploratory storytelling metric for editorial use — not a forecasting model. The 2-month lag was selected after testing correlations at 0, 1, 2 and 3 months.
+    </div>
+  </div>
+</section>
+
+<section class="content-section">
+  <h2 class="section-heading">Methodology</h2>
+
+  <h3 class="section-subheading">Data sources</h3>
+  <div class="content-text">
+    <ul>
+      <li><strong>Eurostat</strong> — Nights spent at tourist accommodation establishments, monthly, Jan 2024 – Feb 2026.</li>
+      <li><strong>Google Trends</strong> — "flights to [country]" search interest, monthly, Jan 2024 – Apr 2026.</li>
+    </ul>
+  </div>
+
+  <h3 class="section-subheading">Cleaning & transformation</h3>
+  <div class="content-text">
+    <p>Eurostat numbers cleaned from EU thousand-separator format (dots) and flags (<code>e</code>, <code>u</code>, <code>:</code>) removed. Google Trends already at monthly resolution. Countries matched by standardised name across both sources.</p>
+    <p><strong>YoY calculation:</strong> <code>(value_month − value_same_month_prior_year) / value_same_month_prior_year × 100</code></p>
+  </div>
+
+  <h3 class="section-subheading">Tech stack</h3>
+  <div class="tech-stack">
+    <span class="tech-tag">Python</span>
+    <span class="tech-tag">pandas</span>
+    <span class="tech-tag">NumPy</span>
+    <span class="tech-tag">openpyxl</span>
+    <span class="tech-tag">Eurostat API</span>
+    <span class="tech-tag">Google Trends</span>
+    <span class="tech-tag">Datawrapper</span>
+  </div>
+
+  <div class="code-block"><pre>git clone https://github.com/marta-ba/travel-demand-monitor
+cd travel-demand-monitor
+pip install pandas openpyxl numpy
+python src/pipeline.py</pre></div>
+</section>
+
+<section class="content-section dark">
+  <h2 class="section-heading">Outputs</h2>
+  <div class="content-text">
+    <p>Four publication-ready CSVs land in <code>data/datawrapper_exports/</code>, each mapped to a Datawrapper chart type:</p>
+    <ul>
+      <li><strong>01_momentum_score_ranked.csv</strong> — horizontal bar chart of ranked destinations.</li>
+      <li><strong>02_scatter_search_lag2_vs_tourism.csv</strong> — scatter plot of search vs tourism.</li>
+      <li><strong>03_search_index_over_time.csv</strong> — multi-series line chart of search trends.</li>
+      <li><strong>04_tourism_yoy_growth.csv</strong> — multi-series line chart of tourism YoY.</li>
+    </ul>
+    <p>A one-page PR-ready insight report is generated to <code>outputs/PR_insight_report.md</code> — exactly what a travel media team needs to publish a data story.</p>
+  </div>
+
+  <!-- 📷 ADD IMAGES HERE — replace placeholders with real chart screenshots -->
+  <div class="visual-grid">
+    <div class="visual-item visual-half">
+      <div class="visual-placeholder">Image — momentum score ranking</div>
+      <div class="visual-caption">Ranked momentum score by destination, Feb 2026.</div>
+    </div>
+    <div class="visual-item visual-half">
+      <div class="visual-placeholder">Image — search vs tourism scatter</div>
+      <div class="visual-caption">Search index (lag 2m) vs tourism YoY growth.</div>
+    </div>
+  </div>
+</section>
+
+<section class="content-section">
+  <h2 class="section-heading">Limitations & honesty</h2>
+  <div class="content-text">
+    <p>Google Trends values are <strong>relative</strong> (0–100 scale), not absolute. Low-base countries produce extreme percentage growth figures and need to be interpreted with care.</p>
+    <p>Correlation between search and tourism growth is weak (<code>r = 0.04–0.07</code>), so <strong>no causal claims are made</strong>. The Momentum Score is a storytelling lens, not a predictive model.</p>
+  </div>
+</section>
+
+<div class="next-project">
+  <div>
+    <div class="next-project-label">Next project</div>
+    <a href="project-1.html" class="next-project-title">Predicting who's about to buy →</a>
+  </div>
+  <a href="../index.html" class="project-btn">All projects</a>
+</div>
+
+<footer>
+  <p>© 2026 Marta Blanco Arévalo</p>
+  <div class="footer-links">
+    <a href="mailto:martablarev@gmail.com">martablarev@gmail.com</a>
+    <a href="https://linkedin.com/in/marta-blanco-arev" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/marta-ba" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>
